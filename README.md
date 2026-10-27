@@ -48,4 +48,8 @@ Week 6 player lines are not in the workbook. The 11–4 team score is in the div
 
 Attendance on its own does not need the script. The page reads `sources/attendance.json` directly. For a new week, set that week's `status` to `recorded` and set each player's mark to `played` (he shot on the paper scoresheet) or `missed`. Leave weeks that have not been played as `upcoming`, with no mark. Played totals, playoff status, and the summary counts are calculated from those marks. If the attendance sheet and the scoresheet disagree, keep the scoresheet result in `marks` and add a `corrections` entry. Commit that file and push `main`.
 
+## Next-match scouting
+
+`data/scouting.json` is the current scouting breakdown. `scout.html` renders that file and nothing else. To publish next week's report, replace `data/scouting.json` and push `main`. Keep the same shape: `week`, `title`, `cards`, and `sections` (each section can have `tables`, `notes`, `bullets`, and `groups`). The home page links to it from Scout in the nav and from the next-match card.
+
 3DA is `points / darts × 3`. MPR is `marks / cricket darts × 3`. Checkout % is hits / opportunities. Same math as the workbook formulas.

@@ -1,0 +1,2700 @@
+{
+  "version": 1,
+  "week": 7,
+  "opponent": "Polonia (Baisch)",
+  "kicker": "QCEDL · Division 04 · data through Week 6 from DartConnect",
+  "title": "POLONIA",
+  "bar": "Week 7 · Thu Oct 29, 2026 · 7:30 PM · Away",
+  "banner": "Thu Oct 29, 2026 · 7:30 PM · AWAY at Polonia, 4431 Belgrade St, Philadelphia, PA 19137 · QCEDL Division 04 · data through Week 6 from DartConnect",
+  "venue_name": "Polonia",
+  "venue_address": "4431 Belgrade St, Philadelphia, PA 19137",
+  "cards": [
+    {
+      "label": "Polonia record",
+      "value": "1-4",
+      "sub": "#6 of 6 · 32 pts"
+    },
+    {
+      "label": "Clemins record",
+      "value": "4-2",
+      "sub": "#2 of 6 · 49 pts"
+    },
+    {
+      "label": "Team PPR / MPR",
+      "value": "40.10 / 1.96",
+      "sub": "Clemins 42.73 / 2.15"
+    },
+    {
+      "label": "Checkout % on a double",
+      "value": "20.7%",
+      "sub": "Clemins 23.3%"
+    },
+    {
+      "label": "Game win % 01 / cricket",
+      "value": "47% / 27%",
+      "sub": "Clemins 50% / 72%"
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. Polonia results",
+      "tables": [
+        {
+          "headers": [
+            "Wk",
+            "Opponent",
+            "H/A",
+            "Score",
+            "01",
+            "Crk"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "1-Fibber Mcgee's Pub (Higgins)"
+                },
+                {
+                  "text": "H"
+                },
+                {
+                  "text": "postponed – not played yet",
+                  "colspan": 3
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "5-Curran's Irish Inn (Clemins)"
+                },
+                {
+                  "text": "A"
+                },
+                {
+                  "text": "L 5-10",
+                  "tone": "loss"
+                },
+                {
+                  "text": "4/12"
+                },
+                {
+                  "text": "1/3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "3"
+                },
+                {
+                  "text": "3-Brickhouse I (Zepp)"
+                },
+                {
+                  "text": "H"
+                },
+                {
+                  "text": "L 5-10",
+                  "tone": "loss"
+                },
+                {
+                  "text": "4/12"
+                },
+                {
+                  "text": "1/3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "4-Curran's Irish Inn (Dina)"
+                },
+                {
+                  "text": "A"
+                },
+                {
+                  "text": "W 8-7",
+                  "tone": "win"
+                },
+                {
+                  "text": "7/12"
+                },
+                {
+                  "text": "1/3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "5"
+                },
+                {
+                  "text": "6-Wissinoming Yacht Club (Gotti)"
+                },
+                {
+                  "text": "H"
+                },
+                {
+                  "text": "L 7-8",
+                  "tone": "loss"
+                },
+                {
+                  "text": "6/12"
+                },
+                {
+                  "text": "1/3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "1-Fibber Mcgee's Pub (Higgins)"
+                },
+                {
+                  "text": "A"
+                },
+                {
+                  "text": "L 7-8",
+                  "tone": "loss"
+                },
+                {
+                  "text": "7/12"
+                },
+                {
+                  "text": "0/3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Points: 32 (1 per game won; 32/75 games). Three straight one-game margins: W4 8-7 win, W5 and W6 7-8 losses."
+      ]
+    },
+    {
+      "title": "Division 04 standings (live)",
+      "tables": [
+        {
+          "headers": [
+            "#",
+            "Team",
+            "W-L",
+            "Pts",
+            "PPR",
+            "MPR"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "3-Brickhouse I (Zepp)"
+                },
+                {
+                  "text": "5-1"
+                },
+                {
+                  "text": "57"
+                },
+                {
+                  "text": "45.57"
+                },
+                {
+                  "text": "2.11"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "5-Curran's Irish Inn (Clemins)"
+                },
+                {
+                  "text": "4-2"
+                },
+                {
+                  "text": "49"
+                },
+                {
+                  "text": "42.73"
+                },
+                {
+                  "text": "2.15"
+                }
+              ],
+              "mark": "us"
+            },
+            {
+              "cells": [
+                {
+                  "text": "3"
+                },
+                {
+                  "text": "6-Wissinoming Yacht Club (Gotti)"
+                },
+                {
+                  "text": "3-3"
+                },
+                {
+                  "text": "43"
+                },
+                {
+                  "text": "39.52"
+                },
+                {
+                  "text": "1.89"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "4-Curran's Irish Inn (Dina)"
+                },
+                {
+                  "text": "2-4"
+                },
+                {
+                  "text": "41"
+                },
+                {
+                  "text": "41.15"
+                },
+                {
+                  "text": "1.94"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "5"
+                },
+                {
+                  "text": "1-Fibber Mcgee's Pub (Higgins)"
+                },
+                {
+                  "text": "2-3"
+                },
+                {
+                  "text": "33"
+                },
+                {
+                  "text": "40.54"
+                },
+                {
+                  "text": "1.86"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "2-Polonia (Baisch)"
+                },
+                {
+                  "text": "1-4"
+                },
+                {
+                  "text": "32"
+                },
+                {
+                  "text": "40.10"
+                },
+                {
+                  "text": "1.96"
+                }
+              ],
+              "mark": "them"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "title": "2. Polonia players – season stats, division rank and win % by format (sorted by 3DA)",
+      "tables": [
+        {
+          "headers": [
+            "Player",
+            "Weeks",
+            "Games",
+            "3DA",
+            "Div rank 3DA",
+            "MPR",
+            "Div rank MPR",
+            "All games W-L",
+            "801 (trip)",
+            "501 (trip)",
+            "Cricket (dbl)"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Ryan Wolf"
+                },
+                {
+                  "text": "4/5 (W2,3,5,6)"
+                },
+                {
+                  "text": "20"
+                },
+                {
+                  "text": "44.76"
+                },
+                {
+                  "text": "11th of 57"
+                },
+                {
+                  "text": "1.54"
+                },
+                {
+                  "text": "44th of 54"
+                },
+                {
+                  "text": "10-10 (50%)"
+                },
+                {
+                  "text": "2-4 (33%)"
+                },
+                {
+                  "text": "8-3 (73%)"
+                },
+                {
+                  "text": "0-3 (0%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Ray Wolf"
+                },
+                {
+                  "text": "4/5 (W2,3,5,6)"
+                },
+                {
+                  "text": "26"
+                },
+                {
+                  "text": "42.66"
+                },
+                {
+                  "text": "20th of 57"
+                },
+                {
+                  "text": "2.23"
+                },
+                {
+                  "text": "9th of 54"
+                },
+                {
+                  "text": "11-15 (42%)"
+                },
+                {
+                  "text": "3-5 (38%)"
+                },
+                {
+                  "text": "7-7 (50%)"
+                },
+                {
+                  "text": "1-3 (25%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "BJ Ray",
+                  "role": "Co-captain"
+                },
+                {
+                  "text": "5/5 (W2,3,4,5,6)"
+                },
+                {
+                  "text": "32"
+                },
+                {
+                  "text": "41.66"
+                },
+                {
+                  "text": "23rd of 57"
+                },
+                {
+                  "text": "2.05"
+                },
+                {
+                  "text": "20th of 54"
+                },
+                {
+                  "text": "13-19 (41%)"
+                },
+                {
+                  "text": "4-6 (40%)"
+                },
+                {
+                  "text": "8-9 (47%)"
+                },
+                {
+                  "text": "1-4 (20%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "John Goldman"
+                },
+                {
+                  "text": "5/5 (W2,3,4,5,6)"
+                },
+                {
+                  "text": "30"
+                },
+                {
+                  "text": "40.43"
+                },
+                {
+                  "text": "29th of 57"
+                },
+                {
+                  "text": "2.00"
+                },
+                {
+                  "text": "23rd of 54"
+                },
+                {
+                  "text": "13-17 (43%)"
+                },
+                {
+                  "text": "3-3 (50%)"
+                },
+                {
+                  "text": "9-10 (47%)"
+                },
+                {
+                  "text": "1-4 (20%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Anthony Baisch",
+                  "role": "Captain"
+                },
+                {
+                  "text": "4/5 (W2,3,4,5)"
+                },
+                {
+                  "text": "11"
+                },
+                {
+                  "text": "40.39"
+                },
+                {
+                  "text": "32nd of 57"
+                },
+                {
+                  "text": "1.36"
+                },
+                {
+                  "text": "50th of 54"
+                },
+                {
+                  "text": "6-5 (55%)"
+                },
+                {
+                  "text": "1-2 (33%)"
+                },
+                {
+                  "text": "4-2 (67%)"
+                },
+                {
+                  "text": "1-1 (50%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Jake Blake"
+                },
+                {
+                  "text": "4/5 (W2,4,5,6)"
+                },
+                {
+                  "text": "25"
+                },
+                {
+                  "text": "40.19"
+                },
+                {
+                  "text": "33rd of 57"
+                },
+                {
+                  "text": "2.38"
+                },
+                {
+                  "text": "6th of 54"
+                },
+                {
+                  "text": "11-14 (44%)"
+                },
+                {
+                  "text": "3-3 (50%)"
+                },
+                {
+                  "text": "6-9 (40%)"
+                },
+                {
+                  "text": "2-2 (50%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Joe Pantalone"
+                },
+                {
+                  "text": "5/5 (W2,3,4,5,6)"
+                },
+                {
+                  "text": "21"
+                },
+                {
+                  "text": "37.37"
+                },
+                {
+                  "text": "42nd of 57"
+                },
+                {
+                  "text": "1.89"
+                },
+                {
+                  "text": "31st of 54"
+                },
+                {
+                  "text": "9-12 (43%)"
+                },
+                {
+                  "text": "3-4 (43%)"
+                },
+                {
+                  "text": "5-7 (42%)"
+                },
+                {
+                  "text": "1-1 (50%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Scott Kessler"
+                },
+                {
+                  "text": "4/5 (W3,4,5,6)"
+                },
+                {
+                  "text": "25"
+                },
+                {
+                  "text": "37.05"
+                },
+                {
+                  "text": "45th of 57"
+                },
+                {
+                  "text": "1.96"
+                },
+                {
+                  "text": "26th of 54"
+                },
+                {
+                  "text": "11-14 (44%)"
+                },
+                {
+                  "text": "3-5 (38%)"
+                },
+                {
+                  "text": "7-6 (54%)"
+                },
+                {
+                  "text": "1-3 (25%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Eddie Ray"
+                },
+                {
+                  "text": "3/5 (W2,4,6)"
+                },
+                {
+                  "text": "11"
+                },
+                {
+                  "text": "36.49"
+                },
+                {
+                  "text": "47th of 57"
+                },
+                {
+                  "text": "1.25"
+                },
+                {
+                  "text": "52nd of 54"
+                },
+                {
+                  "text": "3-8 (27%)"
+                },
+                {
+                  "text": "1-3 (25%)"
+                },
+                {
+                  "text": "2-4 (33%)"
+                },
+                {
+                  "text": "0-1 (0%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Timmy McCue"
+                },
+                {
+                  "text": "3/5 (W2,3,4)"
+                },
+                {
+                  "text": "9"
+                },
+                {
+                  "text": "35.47"
+                },
+                {
+                  "text": "51st of 57"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "5-4 (56%)"
+                },
+                {
+                  "text": "1-1 (50%)"
+                },
+                {
+                  "text": "4-3 (57%)"
+                },
+                {
+                  "text": "—"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Ranks are among all Division 04 players on the DartConnect leaderboard: 57 ranked for 3DA, 54 for cricket MPR (3 players have thrown no cricket). Ties share a rank. Games = team games played (Polonia has played 75 games over 5 matches). All 01 games are triples, all cricket games are doubles."
+      ]
+    },
+    {
+      "title": "3. Polonia form and high marks",
+      "tables": [
+        {
+          "headers": [
+            "Player",
+            "W2 3DA",
+            "W3 3DA",
+            "W4 3DA",
+            "W5 3DA",
+            "W6 3DA",
+            "W5–6 3DA",
+            "Form vs season",
+            "High turn",
+            "100+",
+            "140+",
+            "180s",
+            "High out",
+            "5+ mark rds"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Ryan Wolf"
+                },
+                {
+                  "text": "46.19"
+                },
+                {
+                  "text": "50.53"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "33.63"
+                },
+                {
+                  "text": "50.88"
+                },
+                {
+                  "text": "41.15"
+                },
+                {
+                  "text": "Cold (-3.6)"
+                },
+                {
+                  "text": "140"
+                },
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "33"
+                },
+                {
+                  "text": "1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Ray Wolf"
+                },
+                {
+                  "text": "38.43"
+                },
+                {
+                  "text": "45.00"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "43.22"
+                },
+                {
+                  "text": "44.90"
+                },
+                {
+                  "text": "43.86"
+                },
+                {
+                  "text": "Steady (+1.2)"
+                },
+                {
+                  "text": "140"
+                },
+                {
+                  "text": "7"
+                },
+                {
+                  "text": "3"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "72"
+                },
+                {
+                  "text": "1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "BJ Ray"
+                },
+                {
+                  "text": "41.40"
+                },
+                {
+                  "text": "39.41"
+                },
+                {
+                  "text": "47.04"
+                },
+                {
+                  "text": "40.21"
+                },
+                {
+                  "text": "40.28"
+                },
+                {
+                  "text": "40.24"
+                },
+                {
+                  "text": "Steady (-1.4)"
+                },
+                {
+                  "text": "125"
+                },
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "40"
+                },
+                {
+                  "text": "3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "John Goldman"
+                },
+                {
+                  "text": "42.48"
+                },
+                {
+                  "text": "39.77"
+                },
+                {
+                  "text": "38.10"
+                },
+                {
+                  "text": "39.47"
+                },
+                {
+                  "text": "43.10"
+                },
+                {
+                  "text": "41.43"
+                },
+                {
+                  "text": "Steady (+1.0)"
+                },
+                {
+                  "text": "127"
+                },
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "56"
+                },
+                {
+                  "text": "2"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Anthony Baisch"
+                },
+                {
+                  "text": "42.67"
+                },
+                {
+                  "text": "50.67"
+                },
+                {
+                  "text": "41.00"
+                },
+                {
+                  "text": "32.23"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "32.23"
+                },
+                {
+                  "text": "Cold (-8.2)"
+                },
+                {
+                  "text": "95"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "0"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Jake Blake"
+                },
+                {
+                  "text": "37.88"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "37.33"
+                },
+                {
+                  "text": "47.35"
+                },
+                {
+                  "text": "37.05"
+                },
+                {
+                  "text": "42.03"
+                },
+                {
+                  "text": "Steady (+1.8)"
+                },
+                {
+                  "text": "140"
+                },
+                {
+                  "text": "8"
+                },
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "50"
+                },
+                {
+                  "text": "4"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Joe Pantalone"
+                },
+                {
+                  "text": "38.11"
+                },
+                {
+                  "text": "47.67"
+                },
+                {
+                  "text": "32.92"
+                },
+                {
+                  "text": "27.51"
+                },
+                {
+                  "text": "47.17"
+                },
+                {
+                  "text": "36.75"
+                },
+                {
+                  "text": "Steady (-0.6)"
+                },
+                {
+                  "text": "140"
+                },
+                {
+                  "text": "3"
+                },
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "38"
+                },
+                {
+                  "text": "0"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Scott Kessler"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "36.04"
+                },
+                {
+                  "text": "33.95"
+                },
+                {
+                  "text": "35.79"
+                },
+                {
+                  "text": "43.38"
+                },
+                {
+                  "text": "39.33"
+                },
+                {
+                  "text": "Hot (+2.3)"
+                },
+                {
+                  "text": "99"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "34"
+                },
+                {
+                  "text": "0"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Eddie Ray"
+                },
+                {
+                  "text": "40.93"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "38.20"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "28.08"
+                },
+                {
+                  "text": "28.08"
+                },
+                {
+                  "text": "Cold (-8.4)"
+                },
+                {
+                  "text": "101"
+                },
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Timmy McCue"
+                },
+                {
+                  "text": "38.00"
+                },
+                {
+                  "text": "31.36"
+                },
+                {
+                  "text": "35.78"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "No W5–6 01 games"
+                },
+                {
+                  "text": "125"
+                },
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "—"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Form = W5–6 3DA minus season 3DA: Hot ≥ +2, Cold ≤ −2, else Steady. 100+ = turns of 100–139, 140+ = 140–179 (DartConnect leaderboard). 5+ mark rds = cricket rounds of 5 or more marks. No Polonia player has a 180 or a 7- or 9-mark round."
+      ]
+    },
+    {
+      "title": "4. Checkout – Polonia vs Clemins (season)",
+      "tables": [
+        {
+          "headers": [
+            "Team",
+            "Turns on dbl",
+            "Outs",
+            "Checkout %",
+            "Busts",
+            "Lost after dbl first",
+            "Outs from >40"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Polonia"
+                },
+                {
+                  "text": "82"
+                },
+                {
+                  "text": "17"
+                },
+                {
+                  "text": "20.7%"
+                },
+                {
+                  "text": "38"
+                },
+                {
+                  "text": "5"
+                },
+                {
+                  "text": "11"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Clemins"
+                },
+                {
+                  "text": "129"
+                },
+                {
+                  "text": "30"
+                },
+                {
+                  "text": "23.3%"
+                },
+                {
+                  "text": "61"
+                },
+                {
+                  "text": "15"
+                },
+                {
+                  "text": "6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Polonia by week",
+            "W2",
+            "W3",
+            "W4",
+            "W5",
+            "W6"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Outs / turns on dbl"
+                },
+                {
+                  "text": "3 / 18"
+                },
+                {
+                  "text": "2 / 3"
+                },
+                {
+                  "text": "4 / 24"
+                },
+                {
+                  "text": "4 / 18"
+                },
+                {
+                  "text": "4 / 19"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Busts"
+                },
+                {
+                  "text": "10"
+                },
+                {
+                  "text": "0"
+                },
+                {
+                  "text": "15"
+                },
+                {
+                  "text": "7"
+                },
+                {
+                  "text": "6"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "On a double = turn starting on an even 2–40 or 50. From the recap turn logs (801/501 only). Polonia's W3 log records only 3 turns on a double, so their season rate leans on W2 and W4–6."
+      ]
+    },
+    {
+      "title": "5. Game win % by format",
+      "tables": [
+        {
+          "headers": [
+            "Format",
+            "Polonia",
+            "Clemins"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "801 SIDO (triples)"
+                },
+                {
+                  "text": "8/20 (40%)"
+                },
+                {
+                  "text": "15/24 (62%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "501 DIDO (triples)"
+                },
+                {
+                  "text": "20/40 (50%)"
+                },
+                {
+                  "text": "21/48 (44%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "All 01"
+                },
+                {
+                  "text": "28/60 (47%)"
+                },
+                {
+                  "text": "36/72 (50%)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Cricket (doubles)"
+                },
+                {
+                  "text": "4/15 (27%)"
+                },
+                {
+                  "text": "13/18 (72%)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Each match: 4 × 801, 8 × 501, 3 × cricket. Polonia: W2–6 (5 matches); Clemins: W1–6."
+      ]
+    },
+    {
+      "title": "6. Head-to-head – Clemins vs Polonia, ranked by 3DA (division ranks of 57 for 3DA, 54 for MPR)",
+      "tables": [
+        {
+          "headers": [
+            "#",
+            "Clemins",
+            "3DA",
+            "Rank",
+            "MPR",
+            "Rank",
+            "Polonia",
+            "3DA",
+            "Rank",
+            "MPR",
+            "Rank"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "Jeff Broderick"
+                },
+                {
+                  "text": "47.39"
+                },
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "2.05"
+                },
+                {
+                  "text": "21"
+                },
+                {
+                  "text": "Ryan Wolf"
+                },
+                {
+                  "text": "44.76"
+                },
+                {
+                  "text": "11"
+                },
+                {
+                  "text": "1.54"
+                },
+                {
+                  "text": "44"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "John Klemick"
+                },
+                {
+                  "text": "47.25"
+                },
+                {
+                  "text": "5"
+                },
+                {
+                  "text": "2.38"
+                },
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "Ray Wolf"
+                },
+                {
+                  "text": "42.66"
+                },
+                {
+                  "text": "20"
+                },
+                {
+                  "text": "2.23"
+                },
+                {
+                  "text": "9"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "3"
+                },
+                {
+                  "text": "Dave Keppler"
+                },
+                {
+                  "text": "47.10"
+                },
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "2.85"
+                },
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "BJ Ray"
+                },
+                {
+                  "text": "41.66"
+                },
+                {
+                  "text": "23"
+                },
+                {
+                  "text": "2.05"
+                },
+                {
+                  "text": "20"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "Vince Clemins",
+                  "role": "Captain"
+                },
+                {
+                  "text": "43.48"
+                },
+                {
+                  "text": "17"
+                },
+                {
+                  "text": "2.16"
+                },
+                {
+                  "text": "12"
+                },
+                {
+                  "text": "John Goldman"
+                },
+                {
+                  "text": "40.43"
+                },
+                {
+                  "text": "29"
+                },
+                {
+                  "text": "2.00"
+                },
+                {
+                  "text": "23"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "5"
+                },
+                {
+                  "text": "Mike Broderick"
+                },
+                {
+                  "text": "42.88"
+                },
+                {
+                  "text": "18"
+                },
+                {
+                  "text": "1.72"
+                },
+                {
+                  "text": "39"
+                },
+                {
+                  "text": "Anthony Baisch"
+                },
+                {
+                  "text": "40.39"
+                },
+                {
+                  "text": "32"
+                },
+                {
+                  "text": "1.36"
+                },
+                {
+                  "text": "50"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "Al Fromenko"
+                },
+                {
+                  "text": "41.23"
+                },
+                {
+                  "text": "25"
+                },
+                {
+                  "text": "2.68"
+                },
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "Jake Blake"
+                },
+                {
+                  "text": "40.19"
+                },
+                {
+                  "text": "33"
+                },
+                {
+                  "text": "2.38"
+                },
+                {
+                  "text": "6"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "7"
+                },
+                {
+                  "text": "Tom Davis"
+                },
+                {
+                  "text": "39.53"
+                },
+                {
+                  "text": "36"
+                },
+                {
+                  "text": "2.00"
+                },
+                {
+                  "text": "23"
+                },
+                {
+                  "text": "Joe Pantalone"
+                },
+                {
+                  "text": "37.37"
+                },
+                {
+                  "text": "42"
+                },
+                {
+                  "text": "1.89"
+                },
+                {
+                  "text": "31"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "8"
+                },
+                {
+                  "text": "Jim Wright"
+                },
+                {
+                  "text": "37.45"
+                },
+                {
+                  "text": "41"
+                },
+                {
+                  "text": "1.78"
+                },
+                {
+                  "text": "38"
+                },
+                {
+                  "text": "Scott Kessler"
+                },
+                {
+                  "text": "37.05"
+                },
+                {
+                  "text": "45"
+                },
+                {
+                  "text": "1.96"
+                },
+                {
+                  "text": "26"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "9"
+                },
+                {
+                  "text": "Bill Prelle"
+                },
+                {
+                  "text": "37.37"
+                },
+                {
+                  "text": "43"
+                },
+                {
+                  "text": "1.67"
+                },
+                {
+                  "text": "42"
+                },
+                {
+                  "text": "Eddie Ray"
+                },
+                {
+                  "text": "36.49"
+                },
+                {
+                  "text": "47"
+                },
+                {
+                  "text": "1.25"
+                },
+                {
+                  "text": "52"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "10"
+                },
+                {
+                  "text": "Frank Gillespie"
+                },
+                {
+                  "text": "35.22"
+                },
+                {
+                  "text": "52"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "Timmy McCue"
+                },
+                {
+                  "text": "35.47"
+                },
+                {
+                  "text": "51"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "—"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "11"
+                },
+                {
+                  "text": "Keith McCarthy"
+                },
+                {
+                  "text": "25.66"
+                },
+                {
+                  "text": "57"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Matchup notes. Top-10 in the division for 3DA: Clemins 3, Polonia 0. Polonia's best 01 shooter is Ryan Wolf (44.76, 11th of 57); 3 of ours average more (Jeff Broderick, John Klemick, Dave Keppler). In cricket Polonia has two top-10 shooters, Jake Blake (2.38, 6th of 54) and Ray Wolf (2.23, 9th of 54); we have 3 (Keppler 2nd of 54, Fromenko 4th of 54, Klemick 6th of 54). Their weakest cricket throwers are Ryan Wolf (44th of 54), Captain Anthony Baisch (50th of 54) and Eddie Ray (52nd of 54). All 3DA/MPR values and ranks match the live DartConnect leaderboard (fetched 2026-10-27)."
+      ]
+    },
+    {
+      "title": "7. Keys to the match",
+      "bullets": [
+        "Win the cricket. Polonia has won 4 of 15 cricket games (27%) and lost all 3 in W6; we are 13 of 18 (72%). Expect Blake or Ray Wolf in their pairs – answer with Keppler (2.85) and Fromenko (2.68).",
+        "Take the 801s. Polonia is 8 of 20 in 801 (40%); we are 15 of 24 (62%). Their 501 is better (50%, vs our 44%), so the 501s are where the night is decided.",
+        "Make them check out. Polonia hits 20.7% on a double (17 of 82) and has 38 busts in 5 matches; in W2 they busted 10 times. Get to a double first and keep the pressure on.",
+        "They play close. Their last three matches were decided by one game (8-7 W, 7-8 L, 7-8 L), and they average 40.10 PPR to our 42.73. A 10-5 repeat is not a given, especially on their boards.",
+        "Watch BJ Ray and Jake Blake. BJ Ray (Co-captain, 32 games, the most on the team) played in 4 of Polonia's 5 wins against us in W2; Blake finished two of them (G9, G12)."
+      ]
+    },
+    {
+      "title": "Week 2 Recap – Clemins 10, Polonia 5",
+      "intro": "Thu Sep 24, 2026 · at Curran's Irish Inn (Clemins home) · from the DartConnect match recap 6ab5b2d9… (turn by turn)",
+      "tables": [
+        {
+          "headers": [
+            "#",
+            "Game",
+            "Clemins (side avg)",
+            "Polonia (side avg)",
+            "Winner",
+            "Winning dart / finish",
+            "Run"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "1"
+                },
+                {
+                  "text": "801 SIDO"
+                },
+                {
+                  "text": "Jeff Broderick, Al Fromenko, Mike Broderick (49.88 3DA)"
+                },
+                {
+                  "text": "BJ Ray, John Goldman, Joe Pantalone (50.06 3DA)"
+                },
+                {
+                  "text": "Polonia",
+                  "tone": "loss"
+                },
+                {
+                  "text": "BJ Ray out 40 (DO (3)); loser left 3"
+                },
+                {
+                  "text": "0-1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "2"
+                },
+                {
+                  "text": "801 SIDO"
+                },
+                {
+                  "text": "Dave Keppler, Vince Clemins , Jim Wright (47.12 3DA)",
+                  "role": "Captain"
+                },
+                {
+                  "text": "Ray Wolf, Eddie Ray, Timmy McCue (40.94 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Vince Clemins out 20 (DO (3)); loser left 146"
+                },
+                {
+                  "text": "1-1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "3"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Dave Keppler, Al Fromenko, Tom Davis (40.62 3DA)"
+                },
+                {
+                  "text": "BJ Ray, John Goldman, Joe Pantalone (39.75 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Dave Keppler out 32 (DO (1)); loser left 24"
+                },
+                {
+                  "text": "2-1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "4"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Jeff Broderick, Vince Clemins , Bill Prelle (24.64 3DA)",
+                  "role": "Captain"
+                },
+                {
+                  "text": "Ray Wolf, Jake Blake, Eddie Ray (24.95 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Bill Prelle out 2 (DO (1)); loser left 2"
+                },
+                {
+                  "text": "3-1"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "5"
+                },
+                {
+                  "text": "Cricket"
+                },
+                {
+                  "text": "Jeff Broderick, Vince Clemins (1.50 MPR)",
+                  "role": "Captain"
+                },
+                {
+                  "text": "BJ Ray, John Goldman (1.72 MPR)"
+                },
+                {
+                  "text": "Polonia",
+                  "tone": "loss"
+                },
+                {
+                  "text": "John Goldman closed; final 171-165"
+                },
+                {
+                  "text": "3-2"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "6"
+                },
+                {
+                  "text": "801 SIDO"
+                },
+                {
+                  "text": "Dave Keppler, Al Fromenko, Frank Gillespie (55.88 3DA)"
+                },
+                {
+                  "text": "Ray Wolf, Jake Blake, Ryan Wolf (55.50 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Frank Gillespie out 14 (DO (1)); loser left 24"
+                },
+                {
+                  "text": "4-2"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "7"
+                },
+                {
+                  "text": "801 SIDO"
+                },
+                {
+                  "text": "Jim Wright, Mike Broderick, Bill Prelle (53.40 3DA)"
+                },
+                {
+                  "text": "BJ Ray, Ryan Wolf, Joe Pantalone (48.87 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Bill Prelle out 48 (DO (3)); loser left 68"
+                },
+                {
+                  "text": "5-2"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "8"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Dave Keppler, Jeff Broderick, Tom Davis (51.83 3DA)"
+                },
+                {
+                  "text": "Ray Wolf, John Goldman, Anthony Baisch (40.67 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Dave Keppler out 31 (DO (2)); loser left 135"
+                },
+                {
+                  "text": "6-2"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "9"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Dave Keppler, Vince Clemins , Jim Wright (35.00 3DA)",
+                  "role": "Captain"
+                },
+                {
+                  "text": "BJ Ray, Jake Blake, Ryan Wolf (36.66 3DA)"
+                },
+                {
+                  "text": "Polonia",
+                  "tone": "loss"
+                },
+                {
+                  "text": "Jake Blake out 25 (DO (2)); loser left 11"
+                },
+                {
+                  "text": "6-3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "10"
+                },
+                {
+                  "text": "Cricket"
+                },
+                {
+                  "text": "Dave Keppler, Jim Wright (2.43 MPR)"
+                },
+                {
+                  "text": "Jake Blake, Ryan Wolf (2.33 MPR)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Jim Wright closed; final 389-371"
+                },
+                {
+                  "text": "7-3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "11"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Al Fromenko, Jeff Broderick, Frank Gillespie (37.58 3DA)"
+                },
+                {
+                  "text": "BJ Ray, John Goldman, Eddie Ray (35.43 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Jeff Broderick out 10 (DO (1)); loser left 5"
+                },
+                {
+                  "text": "8-3"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "12"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Dave Keppler, Vince Clemins , Tom Davis (35.64 3DA)",
+                  "role": "Captain"
+                },
+                {
+                  "text": "BJ Ray, Jake Blake, Timmy McCue (37.58 3DA)"
+                },
+                {
+                  "text": "Polonia",
+                  "tone": "loss"
+                },
+                {
+                  "text": "Jake Blake out 6 (DO (1)); loser left 2"
+                },
+                {
+                  "text": "8-4"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "13"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Al Fromenko, Jeff Broderick, Keith McCarthy (39.10 3DA)"
+                },
+                {
+                  "text": "Ray Wolf, John Goldman, Ryan Wolf (46.97 3DA)"
+                },
+                {
+                  "text": "Polonia",
+                  "tone": "loss"
+                },
+                {
+                  "text": "John Goldman out 40 (DO (2)); loser left 110"
+                },
+                {
+                  "text": "8-5"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "14"
+                },
+                {
+                  "text": "501 DIDO"
+                },
+                {
+                  "text": "Vince Clemins , Mike Broderick, Al Fromenko (34.16 3DA)",
+                  "role": "Captain"
+                },
+                {
+                  "text": "Ray Wolf, Jake Blake, Joe Pantalone (33.20 3DA)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Al Fromenko out 20 (DO (2)); loser left 3"
+                },
+                {
+                  "text": "9-5"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "15"
+                },
+                {
+                  "text": "Cricket"
+                },
+                {
+                  "text": "Al Fromenko, Mike Broderick (2.27 MPR)"
+                },
+                {
+                  "text": "Ray Wolf, Joe Pantalone (1.46 MPR)"
+                },
+                {
+                  "text": "Clemins",
+                  "tone": "win"
+                },
+                {
+                  "text": "Al Fromenko closed; final 133-30"
+                },
+                {
+                  "text": "10-5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Player",
+            "Games W-L",
+            "3DA",
+            "MPR",
+            "Season 3DA (rank)",
+            "Season MPR (rank)"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Dave Keppler"
+                },
+                {
+                  "text": "5-2"
+                },
+                {
+                  "text": "47.93"
+                },
+                {
+                  "text": "3.22"
+                },
+                {
+                  "text": "47.10 (6th of 57)"
+                },
+                {
+                  "text": "2.85 (2nd of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Jeff Broderick"
+                },
+                {
+                  "text": "3-3"
+                },
+                {
+                  "text": "47.27"
+                },
+                {
+                  "text": "1.56"
+                },
+                {
+                  "text": "47.39 (4th of 57)"
+                },
+                {
+                  "text": "2.05 (21st of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Mike Broderick"
+                },
+                {
+                  "text": "3-1"
+                },
+                {
+                  "text": "45.73"
+                },
+                {
+                  "text": "1.67"
+                },
+                {
+                  "text": "42.88 (18th of 57)"
+                },
+                {
+                  "text": "1.72 (39th of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Jim Wright"
+                },
+                {
+                  "text": "3-1"
+                },
+                {
+                  "text": "44.86"
+                },
+                {
+                  "text": "1.62"
+                },
+                {
+                  "text": "37.45 (41st of 57)"
+                },
+                {
+                  "text": "1.78 (38th of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Frank Gillespie"
+                },
+                {
+                  "text": "2-0"
+                },
+                {
+                  "text": "39.72"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "35.22 (52nd of 57)"
+                },
+                {
+                  "text": "— (—)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Al Fromenko"
+                },
+                {
+                  "text": "5-2"
+                },
+                {
+                  "text": "39.25"
+                },
+                {
+                  "text": "2.84"
+                },
+                {
+                  "text": "41.23 (25th of 57)"
+                },
+                {
+                  "text": "2.68 (4th of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Vince Clemins",
+                  "role": "Captain"
+                },
+                {
+                  "text": "3-3"
+                },
+                {
+                  "text": "36.68"
+                },
+                {
+                  "text": "1.44"
+                },
+                {
+                  "text": "43.48 (17th of 57)"
+                },
+                {
+                  "text": "2.16 (12th of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Bill Prelle"
+                },
+                {
+                  "text": "2-0"
+                },
+                {
+                  "text": "35.21"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "37.37 (43rd of 57)"
+                },
+                {
+                  "text": "1.67 (42nd of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Tom Davis"
+                },
+                {
+                  "text": "2-1"
+                },
+                {
+                  "text": "31.18"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "39.53 (36th of 57)"
+                },
+                {
+                  "text": "2.00 (23rd of 54)"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Keith McCarthy"
+                },
+                {
+                  "text": "0-1"
+                },
+                {
+                  "text": "31.00"
+                },
+                {
+                  "text": "—"
+                },
+                {
+                  "text": "25.66 (57th of 57)"
+                },
+                {
+                  "text": "— (—)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Player",
+            "Games W-L",
+            "3DA",
+            "MPR"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Ryan Wolf"
+                },
+                {
+                  "text": "2-3"
+                },
+                {
+                  "text": "46.19"
+                },
+                {
+                  "text": "2.00"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Anthony Baisch"
+                },
+                {
+                  "text": "0-1"
+                },
+                {
+                  "text": "42.67"
+                },
+                {
+                  "text": "—"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "John Goldman"
+                },
+                {
+                  "text": "3-3"
+                },
+                {
+                  "text": "42.48"
+                },
+                {
+                  "text": "1.67"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "BJ Ray"
+                },
+                {
+                  "text": "4-3"
+                },
+                {
+                  "text": "41.40"
+                },
+                {
+                  "text": "1.78"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Eddie Ray"
+                },
+                {
+                  "text": "0-3"
+                },
+                {
+                  "text": "40.93"
+                },
+                {
+                  "text": "—"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Ray Wolf"
+                },
+                {
+                  "text": "1-6"
+                },
+                {
+                  "text": "38.43"
+                },
+                {
+                  "text": "1.86"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Joe Pantalone"
+                },
+                {
+                  "text": "1-4"
+                },
+                {
+                  "text": "38.11"
+                },
+                {
+                  "text": "1.00"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Timmy McCue"
+                },
+                {
+                  "text": "1-1"
+                },
+                {
+                  "text": "38.00"
+                },
+                {
+                  "text": "—"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Jake Blake"
+                },
+                {
+                  "text": "2-4"
+                },
+                {
+                  "text": "37.88"
+                },
+                {
+                  "text": "2.67"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "DO (n) = double out on the nth dart of the turn, as DartConnect records it. Side avg = that team's 3DA (01) or MPR (cricket) in the game. Cricket finish = final points."
+      ],
+      "groups": [
+        {
+          "title": "How Polonia beat us (5 games)",
+          "bullets": [
+            "G1 801 – BJ Ray / Goldman / Pantalone: BJ Ray out 40 on his 3rd dart with us on 3. Dead even, 50.06 vs our 49.88.",
+            "G5 cricket – BJ Ray / Goldman 1.72 MPR beat Jeff / Vince 1.50; final 171-165.",
+            "G9 501 – BJ Ray / Blake / Ryan Wolf: Blake out 25 with us on 11 (36.66 vs 35.00).",
+            "G12 501 – BJ Ray / Blake / McCue: Blake out 6 with us on 2 (37.58 vs 35.64).",
+            "G13 501 – Ray Wolf / Goldman / Ryan Wolf: their best game, 46.97; Goldman out 40 with us on 110."
+          ]
+        },
+        {
+          "title": "Takeaways for Thursday",
+          "bullets": [
+            "Three of Polonia's five wins came down to the last double (G1, G9, G12): we were left on 3, 11 and 2. We won the other close ones: G4 (Prelle out 2 with them on 2), G11 (them on 5) and G14 (them on 3).",
+            "BJ Ray was in four of their five wins (G1, G5, G9, G12). Ryan Wolf (46.19 that night) and Goldman also played well.",
+            "This is an away match. Polonia lost both home matches so far (W3 5-10 vs Brickhouse, W5 7-8 vs Gotti), but they have improved since W2 (team W4–6: 8-7, 7-8, 7-8)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": "Sources: tv.dartconnect.com/league/QuCEDL/24490/standings; leaderboard.dartconnect.com season 24490, 01 + cricket, all Division 04 players (57 ranked for 3DA, 54 for MPR); my.dartconnect.com Polonia team page 380980 (roster, roles, Week 7 match and venue); recap.dartconnect.com match recaps for all 17 Division 04 matches, Weeks 1–6 (turn by turn). All fetched Oct 27, 2026, about 10:16–10:20 AM ET. 3DA = PPR. No Week 7 lineup is published yet.",
+  "previous": {
+    "label": "Week 2",
+    "value": "Clemins 10, Polonia 5",
+    "detail": "Thu Sep 24, 2026 · at Curran's Irish Inn (Clemins home) · from the DartConnect match recap 6ab5b2d9… (turn by turn)"
+  },
+  "home_away": "Away"
+}

@@ -18,6 +18,7 @@
   const state = {
     data: null,
     attendanceBoard: null,
+    scout: null,
     sortKey: "ppr_3da",
     sortDir: "desc",
     playerId: null,
@@ -121,8 +122,11 @@
       "<div class='eyebrow'><span>Week " + next.week + " · " + next.home_away + "</span><span>" + next.time + "</span></div>" +
       "<h2>" + escapeHtml(next.opponent_captain.toUpperCase()) + "</h2>" +
       "<p class='next-meta'>" + prettyDate(next.date) + " · " + escapeHtml(next.venue_name) + "<br>" + escapeHtml(next.venue_address) + "</p>" +
-      "<div class='next-actions'>" +
-        "<a class='btn solid' href='" + mapLink(next.venue_address) + "' target='_blank' rel='noopener'>Map</a>" +
+        "<div class='next-actions'>" +
+        (state.scout
+          ? "<a class='btn solid' href='scout.html'>Week " + state.scout.week + " scouting</a>"
+          : "") +
+        "<a class='btn" + (state.scout ? "" : " solid") + "' href='" + mapLink(next.venue_address) + "' target='_blank' rel='noopener'>Map</a>" +
         (next.venue_phone ? "<a class='btn' href='tel:" + next.venue_phone.replace(/[^\d+]/g, "") + "'>" + escapeHtml(next.venue_phone) + "</a>" : "") +
         "<a class='btn' href='#night'>Full card</a>" +
       "</div>" +
@@ -890,12 +894,14 @@
   }
 
   async function boot() {
-    const [response, attendRes] = await Promise.all([
+    const [response, attendRes, scoutRes] = await Promise.all([
       fetch("data/league.json"),
       fetch("sources/attendance.json"),
+      fetch("data/scouting.json"),
     ]);
     if (!response.ok) throw new Error("Could not load league.json");
     state.data = await response.json();
+    if (scoutRes.ok) state.scout = await scoutRes.json();
     if (attendRes.ok) state.attendanceBoard = buildAttendanceBoard(await attendRes.json());
     else if (state.data.attendance) state.attendanceBoard = boardFromLeague(state.data.attendance);
     const byAvg = state.data.players.slice().sort((a, b) => (b.season.ppr_3da || 0) - (a.season.ppr_3da || 0));
