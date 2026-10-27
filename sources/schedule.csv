@@ -1,0 +1,11 @@
+week,date,time,home_away,opponent,venue_name,venue_address,venue_phone,status,result,score,clemins_score,opponent_score,team_ppr,team_mpr,opponent_ppr,opponent_mpr,match_id,recap_url
+1,2026-09-17,7:30 PM,away,4-Curran's Irish Inn (Dina),Curran's Irish Inn,"6900 State Rd., Philadelphia, PA 19135, USA",+1 215-332-8892,completed,W,9-6,9,6,43.84,2.1,39.54,1.8,10470319,https://recap.dartconnect.com/players/6aac78b51f0ad353825f5615
+2,2026-09-24,7:30 PM,home,2-Polonia (Baisch),Curran's Irish Inn,"6900 State Rd., Philadelphia, PA 19135, USA",+1 215-332-8892,completed,W,10-5,10,5,41.52,2.0,40.35,1.9,10470325,https://recap.dartconnect.com/players/6ab5b2d94b883d74de1b3a6f
+3,2026-10-01,7:30 PM,home,6-Wissinoming Yacht Club (Gotti),Curran's Irish Inn,"6900 State Rd., Philadelphia, PA 19135, USA",+1 215-332-8892,completed,W,8-7,8,7,38.87,2.0,38.42,1.8,10470337,https://recap.dartconnect.com/players/6abef0344b883d74de23cb6b
+4,2026-10-08,7:30 PM,away,3-Brickhouse I (Zepp),Brick House Bar & Grill,"3334 Grant Ave, Philadelphia, PA 19114, USA",+1 215-677-5700,completed,L,5-10,5,10,44.59,2.4,45.07,1.8,10470343,https://recap.dartconnect.com/players/6ac829cb4b883d74de2ce70d
+5,2026-10-15,7:30 PM,away,1-Fibber Mcgee's Pub (Higgins),Fibber Mc Gee's Pub,"2221 Bridge St, Philadelphia, PA 19137, USA",+1 215-289-4504,scheduled,,,,,,,,,10470355,
+6,2026-10-22,7:30 PM,home,4-Curran's Irish Inn (Dina),Curran's Irish Inn,"6900 State Rd., Philadelphia, PA 19135, USA",+1 215-332-8892,scheduled,,,,,,,,,10470364,
+7,2026-10-29,7:30 PM,away,2-Polonia (Baisch),Polonia,"4431 Belgrade St, Philadelphia, PA 19137, USA",,scheduled,,,,,,,,,10470370,
+8,2026-11-05,7:30 PM,away,6-Wissinoming Yacht Club (Gotti),Wissinoming Yacht Club,"5200 Devereaux St, Philadelphia, PA 19135, USA",+1 215-331-4530,scheduled,,,,,,,,,10470382,
+9,2026-11-12,7:30 PM,home,3-Brickhouse I (Zepp),Curran's Irish Inn,"6900 State Rd., Philadelphia, PA 19135, USA",+1 215-332-8892,scheduled,,,,,,,,,10470388,
+10,2026-11-19,7:30 PM,home,1-Fibber Mcgee's Pub (Higgins),Curran's Irish Inn,"6900 State Rd., Philadelphia, PA 19135, USA",+1 215-332-8892,scheduled,,,,,,,,,10470400,

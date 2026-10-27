@@ -1,0 +1,45 @@
+player,week,date,opponent,played,games,wins,losses,win_pct,ppr_3da,points_01,darts_01,ppd,mpr,cricket_marks,cricket_darts,high_turn_01,tons_100_plus,tons_140_plus,ton80s,checkouts,busts
+Frank Gillespie,1,2026-09-17,4-Curran's Irish Inn (Dina),False,,,,,,,,,,,,,,,,,
+Frank Gillespie,2,2026-09-24,2-Polonia (Baisch),True,2,2,0,100,39.72,331,25,13.24,,0,0,162,1,1,0,[14],0
+Frank Gillespie,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,2,1,1,50,25.6,256,30,8.53,,0,0,87,0,0,0,[],2
+Frank Gillespie,4,2026-10-08,3-Brickhouse I (Zepp),True,2,0,2,0,37.17,223,18,12.39,,0,0,76,0,0,0,[],0
+John Klemick,1,2026-09-17,4-Curran's Irish Inn (Dina),True,7,4,3,57,50.52,1263,75,16.84,2.2,11,15,140,2,1,0,[],0
+John Klemick,2,2026-09-24,2-Polonia (Baisch),False,,,,,,,,,,,,,,,,,
+John Klemick,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,7,4,3,57,40.64,1016,75,13.55,3.0,18,18,140,3,2,0,"[8, 35]",0
+John Klemick,4,2026-10-08,3-Brickhouse I (Zepp),True,5,1,4,20,48.11,882,55,16.04,1.8,11,18,97,0,0,0,[20],0
+Bill Prelle,1,2026-09-17,4-Curran's Irish Inn (Dina),True,3,1,2,33,37.54,488,39,12.51,,0,0,88,0,0,0,[],0
+Bill Prelle,2,2026-09-24,2-Polonia (Baisch),True,2,2,0,100,35.21,399,34,11.74,,0,0,74,0,0,0,"[2, 48]",2
+Bill Prelle,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,5,2,3,40,43.65,742,51,14.55,1.7,15,27,79,0,0,0,[],0
+Bill Prelle,4,2026-10-08,3-Brickhouse I (Zepp),False,,,,,,,,,,,,,,,,,
+Al Fromenko,1,2026-09-17,4-Curran's Irish Inn (Dina),True,7,5,2,71,42.52,1233,87,14.17,2.4,16,20,105,1,0,0,[88],1
+Al Fromenko,2,2026-09-24,2-Polonia (Baisch),True,7,5,2,71,39.25,1086,83,13.08,2.8,18,19,95,0,0,0,[20],2
+Al Fromenko,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),False,,,,,,,,,,,,,,,,,
+Al Fromenko,4,2026-10-08,3-Brickhouse I (Zepp),True,7,2,5,29,42.39,989,70,14.13,3.8,15,12,97,0,0,0,[4],0
+Vince Clemins,1,2026-09-17,4-Curran's Irish Inn (Dina),True,7,4,3,57,41.62,1193,86,13.87,2.8,17,18,117,1,0,0,[40],2
+Vince Clemins,2,2026-09-24,2-Polonia (Baisch),True,6,3,3,50,36.68,1027,84,12.23,1.4,13,27,83,0,0,0,[20],4
+Vince Clemins,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,6,3,3,50,33.0,957,87,11.0,2.0,16,24,95,0,0,0,[],4
+Vince Clemins,4,2026-10-08,3-Brickhouse I (Zepp),True,6,2,4,33,57.0,1140,60,19.0,2.4,13,16,133,2,0,0,[],0
+Keith McCarthy,1,2026-09-17,4-Curran's Irish Inn (Dina),True,2,2,0,100,32.22,247,23,10.74,,0,0,58,0,0,0,[4],0
+Keith McCarthy,2,2026-09-24,2-Polonia (Baisch),True,1,0,1,0,31.0,93,9,10.33,,0,0,41,0,0,0,[],0
+Keith McCarthy,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,1,1,0,100,19.1,191,30,6.37,,0,0,57,0,0,0,[],4
+Keith McCarthy,4,2026-10-08,3-Brickhouse I (Zepp),True,1,0,1,0,24.25,97,12,8.08,,0,0,38,0,0,0,[],0
+Tom Davis,1,2026-09-17,4-Curran's Irish Inn (Dina),True,5,2,3,40,38.87,609,47,12.96,2.0,12,18,100,1,0,0,[20],2
+Tom Davis,2,2026-09-24,2-Polonia (Baisch),True,3,2,1,67,31.18,343,33,10.39,,0,0,95,0,0,0,[],1
+Tom Davis,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,3,1,2,33,42.6,426,30,14.2,,0,0,79,0,0,0,[],0
+Tom Davis,4,2026-10-08,3-Brickhouse I (Zepp),True,3,2,1,67,38.27,523,41,12.76,,0,0,87,0,0,0,[20],3
+Jim Wright,1,2026-09-17,4-Curran's Irish Inn (Dina),False,,,,,,,,,,,,,,,,,
+Jim Wright,2,2026-09-24,2-Polonia (Baisch),True,4,3,1,75,44.86,628,42,14.95,1.6,14,26,97,0,0,0,[],0
+Jim Wright,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,6,4,2,67,40.05,988,74,13.35,1.6,13,25,140,2,1,0,[4],4
+Jim Wright,4,2026-10-08,3-Brickhouse I (Zepp),False,,,,,,,,,,,,,,,,,
+Dave Keppler,1,2026-09-17,4-Curran's Irish Inn (Dina),False,,,,,,,,,,,,,,,,,
+Dave Keppler,2,2026-09-24,2-Polonia (Baisch),True,7,5,2,71,47.93,1390,87,15.98,3.2,29,27,133,1,0,0,"[32, 31]",1
+Dave Keppler,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),False,,,,,,,,,,,,,,,,,
+Dave Keppler,4,2026-10-08,3-Brickhouse I (Zepp),True,7,3,4,43,43.0,1118,78,14.33,3.0,18,18,120,1,0,0,[],2
+Jeff Broderick,1,2026-09-17,4-Curran's Irish Inn (Dina),True,7,5,2,71,46.43,1269,82,15.48,2.5,14,17,135,2,0,0,"[8, 40]",0
+Jeff Broderick,2,2026-09-24,2-Polonia (Baisch),True,6,3,3,50,47.27,1103,70,15.76,1.6,14,27,140,2,1,0,[10],3
+Jeff Broderick,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,7,3,4,43,47.86,1388,87,15.95,2.1,14,20,133,2,0,0,[30],3
+Jeff Broderick,4,2026-10-08,3-Brickhouse I (Zepp),True,6,1,5,17,50.67,1064,63,16.89,1.5,9,18,134,1,0,0,[],1
+Mike Broderick,1,2026-09-17,4-Curran's Irish Inn (Dina),True,4,2,2,50,52.74,668,38,17.58,0.9,6,21,138,2,0,0,[16],1
+Mike Broderick,2,2026-09-24,2-Polonia (Baisch),True,4,3,1,75,45.73,686,45,15.24,1.7,10,18,85,0,0,0,[],2
+Mike Broderick,3,2026-10-01,6-Wissinoming Yacht Club (Gotti),True,5,3,2,60,42.14,618,44,14.05,2.1,19,27,140,1,1,0,"[45, 16]",0
+Mike Broderick,4,2026-10-08,3-Brickhouse I (Zepp),True,5,2,3,40,37.06,667,54,12.35,2.3,9,12,83,0,0,0,[],1

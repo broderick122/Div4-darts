@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#07080b">
+  <title>Clemins · Curran's Irish Inn · QCEDL Division 04</title>
+  <meta name="description" content="5-Curran's Irish Inn (Clemins), QCEDL Division 04, Philadelphia. 2026–27 first half leaderboard, player form, head-to-head, standings, and match night.">
+  <link rel="canonical" href="https://broderick122.github.io/Div4-darts/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clemins · Division 04">
+  <meta property="og:title" content="Clemins · Curran's Irish Inn · QCEDL Div 04">
+  <meta property="og:description" content="Thursday night steel tip. Leaderboard, form charts, head-to-head, standings, and the next match for 5-Curran's Irish Inn (Clemins).">
+  <meta property="og:url" content="https://broderick122.github.io/Div4-darts/">
+  <meta property="og:image" content="https://broderick122.github.io/Div4-darts/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clemins · Curran's Irish Inn · QCEDL Div 04">
+  <meta name="twitter:description" content="Thursday night steel tip. Leaderboard, form, standings, and match night for the Clemins roster.">
+  <meta name="twitter:image" content="https://broderick122.github.io/Div4-darts/assets/og.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#board">Skip to the leaderboard</a>
+  <header class="top">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <div class="brand-name">CURRAN'S</div>
+        <div class="brand-sub">Clemins · Div 04</div>
+      </div>
+    </div>
+    <nav class="top-nav" aria-label="Sections">
+      <a href="#board">Board</a>
+      <a href="#player">Player</a>
+      <a href="#compare">Versus</a>
+      <a href="#night">Night</a>
+      <a href="#standings">Table</a>
+      <a href="#sheets">Sheets</a>
+    </nav>
+    <div class="record-pill" id="record-pill" aria-live="polite">
+      <strong>—</strong><span>DIV 04</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div>
+        <p class="kicker">QCEDL · Division 04 · Philadelphia · 2026–27 1st half</p>
+        <h1>CLEMINS</h1>
+        <p class="bar-line">5 · Curran's Irish Inn · Steel tip</p>
+        <div class="stat-row" id="hero-stats"></div>
+        <div class="form" id="hero-form" aria-label="Season form"></div>
+      </div>
+      <aside class="next-card" id="hero-next" aria-label="Next match"></aside>
+    </section>
+
+    <section id="board">
+      <div class="section-head">
+        <div>
+          <h2>LEADERBOARD</h2>
+          <p id="board-blurb" class="board-note"></p>
+        </div>
+      </div>
+      <div class="sorts" id="sorts" role="group" aria-label="Sort the leaderboard"></div>
+      <p class="sr" id="sort-status" aria-live="polite"></p>
+      <div class="cards" id="board-cards"></div>
+      <div class="table-wrap">
+        <table class="board-table" id="board-table">
+          <thead>
+            <tr>
+              <th class="name">#</th>
+              <th class="name sortable" data-sort="name">Player</th>
+              <th class="sortable" data-sort="wins">W–L</th>
+              <th class="sortable" data-sort="win_pct">Win%</th>
+              <th class="sortable" data-sort="ppr_3da">3DA</th>
+              <th class="sortable" data-sort="ppd">PPD</th>
+              <th class="sortable" data-sort="mpr">MPR</th>
+              <th class="sortable" data-sort="checkout_pct">CO%</th>
+              <th class="sortable" data-sort="tons_100">100+</th>
+              <th class="sortable" data-sort="high_turn">High</th>
+              <th>Div 3DA</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="player">
+      <div class="section-head">
+        <div>
+          <h2>PLAYER</h2>
+          <p>Season line, personal bests, and week-by-week form.</p>
+        </div>
+      </div>
+      <div class="picker-row">
+        <label>
+          <span class="lbl">Roster</span>
+          <select class="picker" id="player-select" aria-label="Choose a player"></select>
+        </label>
+      </div>
+      <div class="panel profile" id="profile"></div>
+    </section>
+
+    <section id="compare">
+      <div class="section-head">
+        <div>
+          <h2>HEAD TO HEAD</h2>
+          <p>Two teammates, same scale. The longer bar is ahead on that stat.</p>
+        </div>
+      </div>
+      <div class="vs-head">
+        <label>
+          <span class="lbl">Player A</span>
+          <select class="picker" id="compare-a" aria-label="First teammate"></select>
+        </label>
+        <div class="vs-mark">VS</div>
+        <label>
+          <span class="lbl">Player B</span>
+          <select class="picker" id="compare-b" aria-label="Second teammate"></select>
+        </label>
+      </div>
+      <div class="panel" style="padding:16px" id="versus"></div>
+    </section>
+
+    <section id="night">
+      <div class="section-head">
+        <div>
+          <h2>MATCH NIGHT</h2>
+          <p>Next throw, last result, and the season card with DartConnect recaps.</p>
+        </div>
+      </div>
+      <div id="night-body"></div>
+    </section>
+
+    <section id="standings">
+      <div class="section-head">
+        <div>
+          <h2>DIVISION 04</h2>
+          <p id="stand-blurb"></p>
+        </div>
+      </div>
+      <div class="stand-wrap">
+        <table class="stand-table" id="stand-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th class="team">Team</th>
+              <th>W</th>
+              <th>L</th>
+              <th>Pts</th>
+              <th>Against</th>
+              <th>Leg%</th>
+              <th>Played</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="sheets">
+      <div class="section-head">
+        <div>
+          <h2>SCORE SHEETS</h2>
+          <p>Weeks 4, 5, and 6. Tap a sheet for the larger file.</p>
+        </div>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <footer class="colophon" id="colophon"></footer>
+  </main>
+
+  <nav class="dock" aria-label="Sections">
+    <a href="#board">Board</a>
+    <a href="#player">Player</a>
+    <a href="#compare">Versus</a>
+    <a href="#night">Night</a>
+    <a href="#standings">Table</a>
+    <a href="#sheets">Sheets</a>
+  </nav>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <header>
+      <strong id="lightbox-title"></strong>
+      <div style="display:flex;gap:8px">
+        <a class="btn" id="lightbox-full" href="" target="_blank" rel="noopener">Full size</a>
+        <button class="btn solid" type="button" id="lightbox-close">Close</button>
+      </div>
+    </header>
+    <div class="frame">
+      <img id="lightbox-img" alt="">
+    </div>
+  </div>
+
+  <script src="js/vendor/chart.umd.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

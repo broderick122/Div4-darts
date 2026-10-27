@@ -1,0 +1,7 @@
+id,division,division_id,iso2_country,iso3_country,division_display_order,league_points,league_standings_points,standings_points_style,leg_count,leg_wins,leg_win_perc,loss,matches,dcmatches,ppr,mpr,rank,team_name,win,win_points
+380947,Division 04,94576,US,USA,4,40,40,False,60,40,66.67,0,4,4,44.95,2.10,1,3-Brickhouse I (Zepp),4,4
+380923,Division 04,94576,US,USA,4,32,32,False,60,32,53.33,1,4,4,42.11,2.11,2,5-Curran's Irish Inn (Clemins),3,3
+381055,Division 04,94576,US,USA,4,31,31,False,60,31,51.67,2,4,4,39.53,1.95,3,6-Wissinoming Yacht Club (Gotti),2,2
+380989,Division 04,94576,US,USA,4,28,28,False,60,28,46.67,3,4,4,39.78,1.96,4,4-Curran's Irish Inn (Dina),1,1
+380980,Division 04,94576,US,USA,4,18,18,False,45,18,40.00,2,3,3,40.06,1.90,5,2-Polonia (Baisch),1,1
+380965,Division 04,94576,US,USA,4,16,16,False,45,16,35.56,3,3,3,40.11,1.73,6,1-Fibber Mcgee's Pub (Higgins),0,0
