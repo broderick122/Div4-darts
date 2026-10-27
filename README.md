@@ -13,7 +13,7 @@ The page is unlisted (`noindex` plus a `robots.txt` that disallows everything). 
 - Head-to-head bars for any two teammates.
 - Next match (date, time, opponent, venue, map) and the season card with DartConnect recap links where we have them.
 - Division 04 table with Clemins highlighted. Points are legs won.
-- Attendance and playoff eligibility for all ten regular-season weeks. A player is present only if he shot that night. Playoffs need 6 of 10.
+- Attendance and playoff eligibility for all ten regular-season weeks. A player is present only if he shot that night. Playoffs need 6 of 10. Open it from Attend in the nav.
 - Score Sheet buttons on the season card for weeks that have a photo (4, 5, and 6). The images stay in `scoresheets/`.
 
 ## Where the numbers come from
@@ -45,5 +45,7 @@ Week 6 player lines are not in the workbook. The 11–4 team score is in the div
    ```
 
 4. Check the printed leaderboard, commit `data/league.json` and anything new under `scoresheets/`, and push `main`. Pages will pick it up. No compile step.
+
+Attendance on its own does not need the script. The page reads `sources/attendance.json` directly. For a new week, set that week's `status` to `recorded` and set each player's mark to `played` (he shot on the paper scoresheet) or `missed`. Leave weeks that have not been played as `upcoming`, with no mark. Played totals, playoff status, and the summary counts are calculated from those marks. If the attendance sheet and the scoresheet disagree, keep the scoresheet result in `marks` and add a `corrections` entry. Commit that file and push `main`.
 
 3DA is `points / darts × 3`. MPR is `marks / cricket darts × 3`. Checkout % is hits / opportunities. Same math as the workbook formulas.

@@ -648,15 +648,49 @@ select.picker {
 
 .att-summary {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
-.att-summary .tile .num { font-size: 28px; }
+.att-summary article {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px 12px;
+  position: relative;
+  overflow: hidden;
+}
+.att-summary article::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brass), transparent);
+}
+.att-summary .lbl { margin-top: 0; margin-bottom: 6px; }
+.att-summary .num {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(28px, 7vw, 40px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+.att-summary .sub {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.att-summary .num.clinched { color: var(--win); }
+.att-summary .num.needs { color: var(--brass-2); }
+.att-summary .num.out { color: var(--loss); }
 .att-table-wrap { display: none; }
 .att-table {
   width: 100%;
+  min-width: 920px;
   border-collapse: collapse;
-  margin-top: 14px;
+  margin-top: 0;
 }
 .att-table th, .att-table td {
   padding: 8px 4px;
@@ -684,8 +718,10 @@ select.picker {
   text-align: left;
   position: sticky;
   left: 0;
+  min-width: 150px;
   background: #10141b;
   z-index: 1;
+  box-shadow: 8px 0 8px rgba(0, 0, 0, 0.18);
 }
 .att-table thead th.player { z-index: 2; background: #0c1016; }
 .att-table th.player strong, .att-table .player strong {
@@ -696,10 +732,14 @@ select.picker {
   font-weight: 700;
   color: var(--ice);
 }
-.att-table tr.us .player { box-shadow: inset 3px 0 0 var(--brass); }
 .att-table td.shot {
   font-family: var(--display);
   font-size: 22px;
+  white-space: nowrap;
+}
+.att-table td.shot span {
+  color: var(--muted);
+  font-size: 14px;
 }
 .att-mark {
   width: 26px;
@@ -709,7 +749,7 @@ select.picker {
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
-  font-family: var(--cond);
+  font-family: var(--sans);
   font-size: 14px;
   line-height: 1;
 }
@@ -738,16 +778,13 @@ select.picker {
   border: 1px solid var(--line);
   background: rgba(16, 20, 27, 0.88);
 }
-.att-card.us {
-  border-color: var(--line-strong);
-  box-shadow: inset 3px 0 0 var(--brass);
-}
 .att-card header {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   align-items: flex-start;
 }
+.att-card header > div { min-width: 0; }
 .att-card strong {
   font-family: var(--cond);
   font-size: 22px;
@@ -792,6 +829,19 @@ select.picker {
 }
 .att-legend li { display: flex; align-items: center; gap: 6px; }
 .att-legend .att-mark { width: 22px; height: 22px; font-size: 12px; }
+.att-notes {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.att-notes p { margin: 0 0 8px; }
+.att-notes ul { margin: 0 0 8px; padding-left: 18px; }
+.att-corrections { color: var(--brass-2); }
+.att-table-wrap {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
 .trend {
   font-family: var(--cond);
   letter-spacing: 0.14em;
@@ -1022,7 +1072,7 @@ footer.colophon ul { padding-left: 18px; }
   bottom: 0;
   z-index: 40;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   background: rgba(7, 8, 11, 0.94);
   border-top: 1px solid var(--line);
@@ -1053,6 +1103,10 @@ footer.colophon ul { padding-left: 18px; }
   clip: rect(0 0 0 0);
 }
 
+@media (min-width: 800px) and (max-width: 1100px) {
+  .top { gap: 8px; padding: 10px 12px; }
+  .top-nav a { padding: 8px 6px; letter-spacing: 0.06em; font-size: 13px; }
+}
 @media (min-width: 800px) {
   .top-nav { display: flex; }
   .record-pill { margin-left: 0; }
@@ -1063,9 +1117,9 @@ footer.colophon ul { padding-left: 18px; }
     gap: 28px;
   }
   .tiles, .bests { grid-template-columns: repeat(4, 1fr); }
-  .att-summary { grid-template-columns: repeat(5, 1fr); }
+  .att-summary { grid-template-columns: repeat(4, 1fr); }
   .att-cards { display: none; }
-  .att-table-wrap { display: block; overflow-x: auto; }
+  .att-table-wrap { display: block; overflow-x: auto; margin-top: 14px; }
   .cards { display: none; }
   .table-wrap { display: block; }
   .picker-row { grid-template-columns: 1fr 1fr; }

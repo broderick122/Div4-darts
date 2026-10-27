@@ -17,6 +17,7 @@
 
   const state = {
     data: null,
+    attendanceBoard: null,
     sortKey: "ppr_3da",
     sortDir: "desc",
     playerId: null,
@@ -349,27 +350,42 @@
     drawChart(player);
   }
 
+  function boardPerson(player) {
+    const board = state.attendanceBoard;
+    if (!board) return null;
+    return board.players.find((p) => (player.id && p.id === player.id) || p.name === player.name) || null;
+  }
   function attendanceLine(player) {
-    const shot = player.attendance.filter((a) => a.status === "played" || (a.status == null && a.played)).length;
-    const board = state.data.attendance;
+    const person = boardPerson(player);
+    const marks = person ? person.marks : player.attendance;
+    const shot = marks.filter((a) => a.status === "played" || (a.status == null && a.played)).length;
+    const board = state.attendanceBoard || state.data.attendance;
     const through = board && board.recorded_through_week != null
       ? board.recorded_through_week
       : state.data.meta.player_lines_through_week;
-    let tail = "Playoffs need " + player.playoff_weeks_required + ".";
-    if (player.playoff_status === "clinched") tail = "Clinched.";
-    else if (player.playoff_status === "out") tail = "Can't make it.";
-    else if (player.playoff_status === "needs") tail = "Needs " + player.playoff_needs + " of " + player.playoff_remaining + ".";
-    return shot + " of " + player.playoff_weeks_scheduled + " weeks shot through week " + through + ". " + tail;
+    const required = board && board.required_weeks != null ? board.required_weeks : player.playoff_weeks_required;
+    const scheduled = board && board.regular_season_weeks != null ? board.regular_season_weeks : player.playoff_weeks_scheduled;
+    const status = person ? person.status : player.playoff_status;
+    const needs = person ? person.needs : player.playoff_needs;
+    const remaining = person ? person.remaining : player.playoff_remaining;
+    let tail = "Playoffs need " + required + ".";
+    if (status === "clinched") tail = "Clinched.";
+    else if (status === "out") tail = "Can't qualify.";
+    else if (status === "needs") tail = "Needs " + needs + " of " + remaining + ".";
+    return shot + " of " + scheduled + " weeks shot through week " + through + ". " + tail;
   }
   function attendBlocks(player) {
+    const person = boardPerson(player);
+    const marks = person ? person.marks : player.attendance;
+    const scheduled = (state.attendanceBoard && state.attendanceBoard.regular_season_weeks) || player.playoff_weeks_scheduled;
     const map = {};
-    player.attendance.forEach((a) => {
+    marks.forEach((a) => {
       map[a.week] = a.status || (a.played ? "played" : "missed");
     });
     const cls = { played: "on", missed: "off", upcoming: "yet", unrecorded: "na" };
     const label = { played: "Played", missed: "Missed", upcoming: "Not played yet", unrecorded: "Not recorded" };
     let html = "<div class='attend' aria-label='Attendance'>";
-    for (let w = 1; w <= player.playoff_weeks_scheduled; w++) {
+    for (let w = 1; w <= scheduled; w++) {
       const status = map[w];
       const name = status ? label[status] || status : "Not recorded";
       html += "<i class='" + (cls[status] || "") + "' title='Week " + w + " · " + name + "'>" + w + "</i>";
@@ -385,13 +401,136 @@
   }
   function playoffLabel(person) {
     if (person.status === "clinched") return "Clinched";
-    if (person.status === "out") return "Can't make it";
+    if (person.status === "out") return "Can't qualify";
     return "Needs " + person.needs + " of " + person.remaining;
   }
-  function playoffTitle(person) {
-    if (person.status === "clinched") return "Clinched. Six weeks are in.";
-    if (person.status === "out") return "Can't make it. Not enough weeks left.";
+  function playoffTitle(person, required) {
+    if (person.status === "clinched") return "Clinched. " + required + " weeks are in.";
+    if (person.status === "out") return "Can't qualify. Not enough weeks left.";
     return person.needs + " more week" + (person.needs === 1 ? "" : "s") + " needed out of the " + person.remaining + " left.";
+  }
+  function weekSpan(numbers) {
+    if (!numbers.length) return "";
+    const first = numbers[0];
+    const last = numbers[numbers.length - 1];
+    const contiguous = numbers.every((week, index) => week === first + index);
+    if (contiguous && first !== last) return "Wk " + first + "–" + last;
+    return numbers.map((week) => "Wk " + week).join(", ");
+  }
+  function sortAttendancePlayers(people) {
+    const average = new Map();
+    state.data.players.forEach((player) => {
+      const value = player.season && player.season.ppr_3da;
+      if (value != null) average.set(player.name, value);
+    });
+    const indexed = people.map((person, index) => ({ person, index }));
+    if (!indexed.some((row) => average.has(row.person.name))) {
+      return { players: people, sortedBy: "file" };
+    }
+    indexed.sort((a, b) => {
+      const av = average.has(a.person.name) ? average.get(a.person.name) : null;
+      const bv = average.has(b.person.name) ? average.get(b.person.name) : null;
+      if (av == null && bv == null) return a.index - b.index;
+      if (av == null) return 1;
+      if (bv == null) return -1;
+      if (av !== bv) return bv - av;
+      return a.index - b.index;
+    });
+    return {
+      players: indexed.map((row) => row.person),
+      sortedBy: "ppr_3da",
+    };
+  }
+  function eligibilityFor(played, required, remaining) {
+    const needs = Math.max(0, required - played);
+    if (played >= required) return { status: "clinched", needs: 0, remaining: remaining };
+    if (needs > remaining) return { status: "out", needs: needs, remaining: remaining };
+    return { status: "needs", needs: needs, remaining: remaining };
+  }
+  function buildAttendanceBoard(raw) {
+    const weeks = (raw.weeks || []).map((week) => ({
+      week: Number(week.week),
+      date: week.date || "",
+      status: week.status,
+    }));
+    const required = Number(raw.required_weeks);
+    const seasonWeeks = Number(raw.regular_season_weeks);
+    const unrecorded = new Set((raw.not_recorded_weeks || []).map(Number));
+    const captains = new Set(state.data.players.filter((player) => player.captain).map((player) => player.name));
+    if (state.data.meta && state.data.meta.captain) captains.add(state.data.meta.captain);
+    const people = (raw.players || []).map((person) => {
+      const given = person.marks || {};
+      const marks = [];
+      let played = 0;
+      let missed = 0;
+      weeks.forEach((week) => {
+        const key = String(week.week);
+        const mark = given[key] != null ? given[key] : given[week.week];
+        let status;
+        if (week.status === "upcoming") status = "upcoming";
+        else if (week.status === "not_recorded" || unrecorded.has(week.week)) status = "unrecorded";
+        else if (mark === "played" || mark === "missed") status = mark;
+        else status = "unrecorded";
+        if (status === "played") played += 1;
+        else if (status === "missed") missed += 1;
+        marks.push({ week: week.week, status: status });
+      });
+      const remaining = weeks.filter((week) => week.status === "upcoming").length;
+      const eligibility = eligibilityFor(played, required, remaining);
+      const league = state.data.players.find((player) => player.name === person.name);
+      return {
+        name: person.name,
+        marks: marks,
+        played: played,
+        missed: missed,
+        status: eligibility.status,
+        needs: eligibility.needs,
+        remaining: eligibility.remaining,
+        captain: captains.has(person.name),
+        id: league ? league.id : null,
+      };
+    });
+    const ordered = sortAttendancePlayers(people);
+    const recorded = weeks.filter((week) => week.status === "recorded");
+    const upcoming = weeks.filter((week) => week.status === "upcoming");
+    return {
+      season: raw.season,
+      rule: raw.rule,
+      required_weeks: required,
+      regular_season_weeks: seasonWeeks,
+      updated: raw.updated,
+      recorded_through_week: recorded.length ? recorded[recorded.length - 1].week : null,
+      recorded_through_date: recorded.length ? recorded[recorded.length - 1].date : null,
+      weeks_left: upcoming.length,
+      upcoming_weeks: upcoming.map((week) => week.week),
+      recorded_count: recorded.length,
+      weeks: weeks,
+      players: ordered.players,
+      sorted_by: ordered.sortedBy,
+      summary: {
+        clinched: ordered.players.filter((person) => person.status === "clinched").length,
+        needs: ordered.players.filter((person) => person.status === "needs").length,
+        out: ordered.players.filter((person) => person.status === "out").length,
+      },
+      corrections: raw.corrections || [],
+      caveats: raw.caveats || [],
+      sources: raw.sources || [],
+    };
+  }
+  function boardFromLeague(board) {
+    const ordered = sortAttendancePlayers(board.players || []);
+    const recorded = (board.weeks || []).filter((week) => week.status === "recorded");
+    const upcoming = (board.weeks || []).filter((week) => week.status === "upcoming");
+    return Object.assign({}, board, {
+      players: ordered.players,
+      sorted_by: ordered.sortedBy,
+      recorded_count: recorded.length,
+      recorded_through_date: recorded.length ? recorded[recorded.length - 1].date : null,
+      upcoming_weeks: upcoming.map((week) => week.week),
+      corrections: board.corrections || [],
+      caveats: board.caveats || [],
+      sources: board.sources || [],
+    });
   }
   function markGlyph(status) {
     if (status === "played") return "✓";
@@ -406,45 +545,69 @@
     return "Not recorded";
   }
   function renderAttendance() {
-    const board = state.data.attendance;
+    const board = state.attendanceBoard;
     const root = $("attend-body");
-    if (!board || !root) return;
-    $("attend-rule").textContent = board.rule;
+    if (!root) return;
+    if (!board) {
+      $("attend-rule").textContent = "Playoff attendance is not loaded.";
+      root.innerHTML = "";
+      return;
+    }
+    const throughWeek = state.data.meta && state.data.meta.player_lines_through_week;
+    const sortNote = board.sorted_by === "ppr_3da"
+      ? " Sorted by season 3-dart average" + (throughWeek ? " (through week " + throughWeek + ")." : ".")
+      : " Listed in roster order.";
+    $("attend-rule").textContent = board.rule + sortNote;
+    const leftCount = board.weeks_left;
+    const leftWord = leftCount === 1 ? "1 week left" : leftCount + " weeks left";
+    const leftSpan = weekSpan(board.upcoming_weeks || []);
+    const leftLine = leftCount ? leftWord + (leftSpan ? " (" + leftSpan + ")" : "") : "No weeks left";
+    const throughLine = board.recorded_through_week == null
+      ? "No weeks recorded"
+      : "Week " + board.recorded_through_week;
+    const throughSub = [
+      board.recorded_through_date ? shortDate(board.recorded_through_date) : "",
+      leftLine,
+    ].filter(Boolean).join(" · ");
+    const recordedCount = board.recorded_count || (board.weeks || []).filter((week) => week.status === "recorded").length;
     const summary = [
-      [String(board.recorded_through_week), "Recorded through"],
-      [String(board.weeks_left), "Weeks left"],
-      [String(board.summary.clinched), "Clinched"],
-      [String(board.summary.needs), "Still need weeks"],
-      [String(board.summary.out), "Can't make it"],
+      { num: throughLine, label: "Recorded through", sub: throughSub, cls: "" },
+      { num: String(board.summary.clinched), label: "Clinched", sub: board.required_weeks + "+ weeks played", cls: "clinched" },
+      { num: String(board.summary.needs), label: "Still need weeks", sub: "can still make it", cls: "needs" },
+      { num: String(board.summary.out), label: "Can't make it", sub: "not enough weeks left", cls: "out" },
     ];
-    const weekHeads = board.weeks.map((w) =>
-      "<th scope='col'><span>W" + w.week + "</span><small>" + shortDate(w.date) + "</small></th>"
+    const weekHeads = board.weeks.map((week) =>
+      "<th scope='col'><span>Wk " + week.week + "</span><small>" + shortDate(week.date) + "</small></th>"
     ).join("");
-    const rows = board.players.map((person) => {
+    function cellsFor(person) {
       const marks = {};
-      person.marks.forEach((m) => { marks[m.week] = m.status; });
-      const cells = board.weeks.map((w) => {
-        const status = marks[w.week] || "unrecorded";
-        return "<td><span class='att-mark " + status + "' title='Week " + w.week + " · " + markName(status) + "' aria-label='Week " + w.week + " " + markName(status) + "'>" + markGlyph(status) + "</span></td>";
-      }).join("");
+      person.marks.forEach((mark) => { marks[mark.week] = mark.status; });
+      return board.weeks.map((week) => {
+        const status = marks[week.week] || "unrecorded";
+        return { week: week, status: status };
+      });
+    }
+    const rows = board.players.map((person) => {
+      const cells = cellsFor(person).map((cell) =>
+        "<td><span class='att-mark " + cell.status + "' title='Week " + cell.week.week + " · " + markName(cell.status) + "' aria-label='Week " + cell.week.week + " " + markName(cell.status) + "'>" + markGlyph(cell.status) + "</span></td>"
+      ).join("");
       const cap = person.captain ? "<span class='cap'>Captain</span>" : "";
-      return "<tr class='" + (person.captain ? "us" : "") + "'><th scope='row' class='player'><strong>" + escapeHtml(person.name) + "</strong>" + cap + "</th>" +
+      const title = playoffTitle(person, board.required_weeks);
+      return "<tr><th scope='row' class='player'><strong>" + escapeHtml(person.name) + "</strong>" + cap + "</th>" +
         cells +
-        "<td class='shot'>" + person.played + "</td>" +
-        "<td><span class='elig " + person.status + "' title='" + escapeHtml(playoffTitle(person)) + "'>" + escapeHtml(playoffLabel(person)) + "</span></td></tr>";
+        "<td class='shot'>" + person.played + "<span>/" + recordedCount + "</span></td>" +
+        "<td><span class='elig " + person.status + "' title='" + escapeHtml(title) + "'>" + escapeHtml(playoffLabel(person)) + "</span></td></tr>";
     }).join("");
     const cards = board.players.map((person) => {
-      const marks = {};
-      person.marks.forEach((m) => { marks[m.week] = m.status; });
-      const weeks = board.weeks.map((w) => {
-        const status = marks[w.week] || "unrecorded";
-        return "<div class='att-week " + status + "'><b>" + w.week + "</b><span class='att-mark " + status + "' aria-label='Week " + w.week + " " + markName(status) + "'>" + markGlyph(status) + "</span><small>" + shortDate(w.date) + "</small></div>";
-      }).join("");
+      const weeks = cellsFor(person).map((cell) =>
+        "<div class='att-week " + cell.status + "'><b>" + cell.week.week + "</b><span class='att-mark " + cell.status + "' aria-label='Week " + cell.week.week + " " + shortDate(cell.week.date) + ", " + markName(cell.status) + "'>" + markGlyph(cell.status) + "</span><small>" + shortDate(cell.week.date) + "</small></div>"
+      ).join("");
       const cap = person.captain ? "<span class='cap'>Captain</span>" : "";
-      return "<article class='att-card" + (person.captain ? " us" : "") + "'>" +
+      const title = playoffTitle(person, board.required_weeks);
+      return "<article class='att-card'>" +
         "<header><div><strong>" + escapeHtml(person.name) + "</strong>" + cap +
-        "<div class='ha'>" + person.played + " weeks played</div></div>" +
-        "<span class='elig " + person.status + "' title='" + escapeHtml(playoffTitle(person)) + "'>" + escapeHtml(playoffLabel(person)) + "</span></header>" +
+        "<div class='ha'>" + person.played + "/" + recordedCount + " played</div></div>" +
+        "<span class='elig " + person.status + "' title='" + escapeHtml(title) + "'>" + escapeHtml(playoffLabel(person)) + "</span></header>" +
         "<div class='att-weeks'>" + weeks + "</div></article>";
     }).join("");
     const legend = [
@@ -455,12 +618,28 @@
     ].map(([status, label]) =>
       "<li><span class='att-mark " + status + "' aria-hidden='true'>" + markGlyph(status) + "</span>" + label + "</li>"
     ).join("");
+    const corrections = (board.corrections || []).map((item) =>
+      "<li>Week " + item.week + " " + escapeHtml(item.player) + ": sheet says " + escapeHtml(item.sheet) +
+      ", scoresheet shows " + escapeHtml(item.used) + ". " + escapeHtml(item.why || "") + "</li>"
+    ).join("");
+    const caveats = (board.caveats || []).map((item) =>
+      "<li>Week " + item.week + " " + escapeHtml(item.player) + ": " + escapeHtml(item.note) + "</li>"
+    ).join("");
+    const sources = (board.sources || []).map((item) => escapeHtml(item.name)).filter(Boolean);
     root.innerHTML =
-      "<div class='att-summary'>" + summary.map(([n, l]) => "<article class='tile'><div class='num'>" + n + "</div><span class='lbl'>" + l + "</span></article>").join("") + "</div>" +
-      "<div class='att-table-wrap'><table class='att-table'><thead><tr><th scope='col' class='player'>Player</th>" + weekHeads +
+      "<div class='att-summary'>" + summary.map((item) =>
+        "<article><span class='lbl'>" + item.label + "</span><div class='num " + item.cls + "'>" + item.num + "</div><p class='sub'>" + item.sub + "</p></article>"
+      ).join("") + "</div>" +
+      "<div class='att-table-wrap'><table class='att-table'><caption class='sr'>Playoff attendance, weeks 1 through " + board.regular_season_weeks + "</caption><thead><tr><th scope='col' class='player'>Player</th>" + weekHeads +
         "<th scope='col'>Played</th><th scope='col'>Playoffs</th></tr></thead><tbody>" + rows + "</tbody></table></div>" +
       "<div class='att-cards'>" + cards + "</div>" +
-      "<ul class='att-legend'>" + legend + "</ul>";
+      "<ul class='att-legend'>" + legend + "</ul>" +
+      "<div class='att-notes'>" +
+        "<p>Played is weeks shot out of the " + recordedCount + " recorded. Needs N of R means N more weeks out of the R still left.</p>" +
+        (corrections ? "<p class='att-corrections'>Corrected from the attendance sheet</p><ul class='att-corrections'>" + corrections + "</ul>" : "") +
+        (caveats ? "<ul class='att-caveat'>" + caveats + "</ul>" : "") +
+        (sources.length ? "<p>Sources: " + sources.join("; ") + ".</p>" : "") +
+      "</div>";
   }
 
   function drawChart(player) {
@@ -711,9 +890,14 @@
   }
 
   async function boot() {
-    const response = await fetch("data/league.json");
+    const [response, attendRes] = await Promise.all([
+      fetch("data/league.json"),
+      fetch("sources/attendance.json"),
+    ]);
     if (!response.ok) throw new Error("Could not load league.json");
     state.data = await response.json();
+    if (attendRes.ok) state.attendanceBoard = buildAttendanceBoard(await attendRes.json());
+    else if (state.data.attendance) state.attendanceBoard = boardFromLeague(state.data.attendance);
     const byAvg = state.data.players.slice().sort((a, b) => (b.season.ppr_3da || 0) - (a.season.ppr_3da || 0));
     state.playerId = (byAvg[0] && byAvg[0].id) || state.data.players[0].id;
     const mike = state.data.players.find((p) => p.id === "mike-broderick");

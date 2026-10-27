@@ -738,6 +738,9 @@ def load_attendance_board():
         "weeks": weeks,
         "players": players_out,
         "summary": summary,
+        "corrections": raw.get("corrections") or [],
+        "caveats": raw.get("caveats") or [],
+        "sources": raw.get("sources") or [],
     }
 
 
@@ -786,6 +789,17 @@ def apply_attendance(players, board, workbook_attendance):
     missing = [player["name"] for player in players if player["name"] not in listed]
     if missing:
         print("roster players missing from attendance.json: " + ", ".join(missing))
+    averages = {player["name"]: (player.get("season") or {}).get("ppr_3da") for player in players}
+    indexed = list(enumerate(board["players"]))
+    if any(averages.get(person["name"]) is not None for _, person in indexed):
+        indexed.sort(
+            key=lambda item: (
+                averages.get(item[1]["name"]) is None,
+                -(averages.get(item[1]["name"]) or 0),
+                item[0],
+            )
+        )
+        board["players"] = [person for _, person in indexed]
 
 
 def main():
