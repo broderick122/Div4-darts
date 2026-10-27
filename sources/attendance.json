@@ -1,0 +1,278 @@
+{
+ "season": "1st Half 2026/27",
+ "team": "5-Curran's Irish Inn (Clemins)",
+ "rule": "A player counts as present for a week only if they shot that night per the paper scoresheet. Playoff eligibility: 6 of the 10 regular-season weeks in the half.",
+ "required_weeks": 6,
+ "regular_season_weeks": 10,
+ "updated": "2026-10-27",
+ "sources": [
+  {
+   "name": "QCEDL_Clemins_1st_Half_2026-27_thru_W6.xlsx (Google Drive attendance sheet)",
+   "path": "attendance/QCEDL_Clemins_1st_Half_2026-27_thru_W6.xlsx",
+   "covers": "Weeks 1-6"
+  },
+  {
+   "name": "Week 6 paper scoresheet photo (Google Drive)",
+   "path": "scoresheets/Week6_2026-10-22_scoresheet.jpg",
+   "covers": "Week 6"
+  },
+  {
+   "name": "DartConnect match recaps (cross-check: who threw darts each week)",
+   "covers": "Weeks 1-6"
+  }
+ ],
+ "weeks": [
+  {
+   "week": 1,
+   "date": "2026-09-17",
+   "status": "recorded"
+  },
+  {
+   "week": 2,
+   "date": "2026-09-24",
+   "status": "recorded"
+  },
+  {
+   "week": 3,
+   "date": "2026-10-01",
+   "status": "recorded"
+  },
+  {
+   "week": 4,
+   "date": "2026-10-08",
+   "status": "recorded"
+  },
+  {
+   "week": 5,
+   "date": "2026-10-15",
+   "status": "recorded"
+  },
+  {
+   "week": 6,
+   "date": "2026-10-22",
+   "status": "recorded"
+  },
+  {
+   "week": 7,
+   "date": "2026-10-29",
+   "status": "upcoming"
+  },
+  {
+   "week": 8,
+   "date": "2026-11-05",
+   "status": "upcoming"
+  },
+  {
+   "week": 9,
+   "date": "2026-11-12",
+   "status": "upcoming"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-19",
+   "status": "upcoming"
+  }
+ ],
+ "players": [
+  {
+   "name": "Mike Broderick",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "played",
+    "4": "played",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 6,
+   "missed": 0,
+   "status": "clinched",
+   "needs": 0,
+   "remaining": 4
+  },
+  {
+   "name": "Jeff Broderick",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "played",
+    "4": "played",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 6,
+   "missed": 0,
+   "status": "clinched",
+   "needs": 0,
+   "remaining": 4
+  },
+  {
+   "name": "Vince Clemins",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "played",
+    "4": "played",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 6,
+   "missed": 0,
+   "status": "clinched",
+   "needs": 0,
+   "remaining": 4
+  },
+  {
+   "name": "Tom Davis",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "played",
+    "4": "played",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 6,
+   "missed": 0,
+   "status": "clinched",
+   "needs": 0,
+   "remaining": 4
+  },
+  {
+   "name": "Keith McCarthy",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "played",
+    "4": "played",
+    "5": "played",
+    "6": "missed"
+   },
+   "played": 5,
+   "missed": 1,
+   "status": "needs",
+   "needs": 1,
+   "remaining": 4
+  },
+  {
+   "name": "Bill Prelle",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "played",
+    "4": "missed",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 5,
+   "missed": 1,
+   "status": "needs",
+   "needs": 1,
+   "remaining": 4
+  },
+  {
+   "name": "John Klemick",
+   "marks": {
+    "1": "played",
+    "2": "missed",
+    "3": "played",
+    "4": "played",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 5,
+   "missed": 1,
+   "status": "needs",
+   "needs": 1,
+   "remaining": 4
+  },
+  {
+   "name": "Al Fromenko",
+   "marks": {
+    "1": "played",
+    "2": "played",
+    "3": "missed",
+    "4": "played",
+    "5": "played",
+    "6": "missed"
+   },
+   "played": 4,
+   "missed": 2,
+   "status": "needs",
+   "needs": 2,
+   "remaining": 4
+  },
+  {
+   "name": "Frank Gillespie",
+   "marks": {
+    "1": "missed",
+    "2": "played",
+    "3": "played",
+    "4": "played",
+    "5": "missed",
+    "6": "played"
+   },
+   "played": 4,
+   "missed": 2,
+   "status": "needs",
+   "needs": 2,
+   "remaining": 4
+  },
+  {
+   "name": "Jim Wright",
+   "marks": {
+    "1": "missed",
+    "2": "played",
+    "3": "played",
+    "4": "missed",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 4,
+   "missed": 2,
+   "status": "needs",
+   "needs": 2,
+   "remaining": 4
+  },
+  {
+   "name": "Dave Keppler",
+   "marks": {
+    "1": "missed",
+    "2": "played",
+    "3": "missed",
+    "4": "played",
+    "5": "played",
+    "6": "played"
+   },
+   "played": 4,
+   "missed": 2,
+   "status": "needs",
+   "needs": 2,
+   "remaining": 4
+  }
+ ],
+ "corrections": [
+  {
+   "week": 6,
+   "player": "Tom Davis",
+   "sheet": "missed",
+   "used": "played",
+   "why": "The Week 6 scoresheet shows Tom in two games (an 801 and a 501), and DartConnect has him in 2 games that night. The Drive sheet marks him missed."
+  },
+  {
+   "week": 6,
+   "player": "Keith McCarthy",
+   "sheet": "played",
+   "used": "missed",
+   "why": "The Week 6 scoresheet has no games checked for Keith, and DartConnect has no games for him that night. The Drive sheet marks him played."
+  }
+ ],
+ "caveats": [
+  {
+   "week": 6,
+   "player": "Al Fromenko",
+   "note": "The Drive sheet comment says his name was scribbled/crossed out and marks him missed as \"UNCERTAIN\". The scoresheet shows his row crossed out with no games, and DartConnect has no games for him, so missed is used."
+  }
+ ],
+ "not_recorded_weeks": []
+}

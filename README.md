@@ -13,7 +13,8 @@ The page is unlisted (`noindex` plus a `robots.txt` that disallows everything). 
 - Head-to-head bars for any two teammates.
 - Next match (date, time, opponent, venue, map) and the season card with DartConnect recap links where we have them.
 - Division 04 table with Clemins highlighted. Points are legs won.
-- Score sheets for weeks 4, 5, and 6, with a full-size file next to the web image.
+- Attendance and playoff eligibility for all ten regular-season weeks. A player is present only if he shot that night. Playoffs need 6 of 10.
+- Score Sheet buttons on the season card for weeks that have a photo (4, 5, and 6). The images stay in `scoresheets/`.
 
 ## Where the numbers come from
 
@@ -21,7 +22,8 @@ The page is unlisted (`noindex` plus a `robots.txt` that disallows everything). 
 
 | File | What it feeds |
 | --- | --- |
-| `sources/clemins-half.xlsx` (Stats + Attendance) | Player lines through the last keyed week (Week 5 in this drop): points, darts, marks, checkouts, W–L |
+| `sources/clemins-half.xlsx` (Stats) | Player lines through the last keyed week (Week 5 in this drop): points, darts, marks, checkouts, W–L |
+| `sources/attendance.json` | Who shot each week, and whether later weeks are still upcoming. This is the attendance the site shows. |
 | `sources/roster_weekly.csv` | High turn, 100+, 140+, 180s, checkout scores (Weeks 1–4) |
 | `sources/roster_stats.csv` | First-nine average, division ranks, 5/7/9-mark rounds |
 | `sources/division_schedule.csv` | Scores, venues, and the division table through Week 6 |
@@ -34,7 +36,7 @@ Week 6 player lines are not in the workbook. The 11–4 team score is in the div
 
 ## Update it next week
 
-1. Replace the CSVs and `sources/clemins-half.xlsx` with the new export. Keep the filenames.
+1. Replace the CSVs and `sources/clemins-half.xlsx` with the new export. Keep the filenames. In `sources/attendance.json`, mark the new week `played` or `missed` for each player and set that week's `status` to `recorded`. Leave weeks that have not been played as `upcoming`.
 2. Put the new photo at `sources/scoresheets/week-07.jpg`. In `scripts/build_data.py`, add a row to `SCORESHEET_SOURCES` (`rotate` is degrees counter-clockwise if the phone saved it sideways).
 3. From the repo root, with `openpyxl` and `Pillow` installed:
 

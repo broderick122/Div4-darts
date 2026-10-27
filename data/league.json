@@ -19,7 +19,8 @@
       "100+, 140+, 180s, high turn, and checkout scores are from the DartConnect weekly export (Weeks 1\u20134). Week 5\u20136 visit scores were not in that export.",
       "First-nine average, division ranks, and 5/7/9-mark rounds are the DartConnect roster export (through Week 4).",
       "Team results and the division table are scored from the division schedule through Week 6. The DartConnect standings file in sources/ is the Week 4 snapshot.",
-      "Week 6 individual lines are on the scoresheet photo and are not in the workbook, so they are not in the player averages."
+      "Week 6 individual lines are on the scoresheet photo and are not in the workbook, so they are not in the player averages.",
+      "Attendance through Week 6 counts a player present only when he shot that night on the paper scoresheet. Playoffs need 6 of 10 regular-season weeks. 4 weeks have not been played."
     ]
   },
   "team": {
@@ -98,23 +99,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -300,7 +331,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "clinched",
+      "playoff_needs": 0,
+      "playoff_remaining": 4
     },
     {
       "id": "mike-broderick",
@@ -314,23 +348,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -514,7 +578,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "clinched",
+      "playoff_needs": 0,
+      "playoff_remaining": 4
     },
     {
       "id": "vince-clemins",
@@ -528,23 +595,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -727,7 +824,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "clinched",
+      "playoff_needs": 0,
+      "playoff_remaining": 4
     },
     {
       "id": "tom-davis",
@@ -741,23 +841,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -940,7 +1070,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "clinched",
+      "playoff_needs": 0,
+      "playoff_remaining": 4
     },
     {
       "id": "al-fromenko",
@@ -954,23 +1087,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": false,
+          "status": "missed"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -1155,7 +1318,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 2,
+      "playoff_remaining": 4
     },
     {
       "id": "frank-gillespie",
@@ -1169,23 +1335,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": false
+          "played": false,
+          "status": "missed"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -1359,7 +1555,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 2,
+      "playoff_remaining": 4
     },
     {
       "id": "dave-keppler",
@@ -1373,23 +1572,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -1571,7 +1800,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 2,
+      "playoff_remaining": 4
     },
     {
       "id": "john-klemick",
@@ -1585,23 +1817,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -1785,7 +2047,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 1,
+      "playoff_remaining": 4
     },
     {
       "id": "keith-mccarthy",
@@ -1799,23 +2064,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": false,
+          "status": "missed"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -1989,7 +2284,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 1,
+      "playoff_remaining": 4
     },
     {
       "id": "bill-prelle",
@@ -2003,23 +2301,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -2201,7 +2529,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 1,
+      "playoff_remaining": 4
     },
     {
       "id": "jim-wright",
@@ -2215,23 +2546,53 @@
       "attendance": [
         {
           "week": 1,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 2,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 3,
-          "played": true
+          "played": true,
+          "status": "played"
         },
         {
           "week": 4,
-          "played": false
+          "played": false,
+          "status": "missed"
         },
         {
           "week": 5,
-          "played": true
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 6,
+          "played": true,
+          "status": "played"
+        },
+        {
+          "week": 7,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 8,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 9,
+          "played": false,
+          "status": "upcoming"
+        },
+        {
+          "week": 10,
+          "played": false,
+          "status": "upcoming"
         }
       ],
       "season": {
@@ -2412,7 +2773,10 @@
           "checkouts": [],
           "busts": null
         }
-      ]
+      ],
+      "playoff_status": "needs",
+      "playoff_needs": 2,
+      "playoff_remaining": 4
     }
   ],
   "matches": [
@@ -3325,5 +3689,645 @@
       "web_bytes": 217571,
       "full_bytes": 734007
     }
-  ]
+  ],
+  "attendance": {
+    "season": "1st Half 2026/27",
+    "rule": "A player counts as present for a week only if they shot that night per the paper scoresheet. Playoff eligibility: 6 of the 10 regular-season weeks in the half.",
+    "required_weeks": 6,
+    "regular_season_weeks": 10,
+    "updated": "2026-10-27",
+    "recorded_through_week": 6,
+    "weeks_left": 4,
+    "weeks": [
+      {
+        "week": 1,
+        "date": "2026-09-17",
+        "status": "recorded"
+      },
+      {
+        "week": 2,
+        "date": "2026-09-24",
+        "status": "recorded"
+      },
+      {
+        "week": 3,
+        "date": "2026-10-01",
+        "status": "recorded"
+      },
+      {
+        "week": 4,
+        "date": "2026-10-08",
+        "status": "recorded"
+      },
+      {
+        "week": 5,
+        "date": "2026-10-15",
+        "status": "recorded"
+      },
+      {
+        "week": 6,
+        "date": "2026-10-22",
+        "status": "recorded"
+      },
+      {
+        "week": 7,
+        "date": "2026-10-29",
+        "status": "upcoming"
+      },
+      {
+        "week": 8,
+        "date": "2026-11-05",
+        "status": "upcoming"
+      },
+      {
+        "week": 9,
+        "date": "2026-11-12",
+        "status": "upcoming"
+      },
+      {
+        "week": 10,
+        "date": "2026-11-19",
+        "status": "upcoming"
+      }
+    ],
+    "players": [
+      {
+        "name": "Mike Broderick",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 6,
+        "missed": 0,
+        "status": "clinched",
+        "needs": 0,
+        "remaining": 4,
+        "id": "mike-broderick",
+        "captain": false
+      },
+      {
+        "name": "Jeff Broderick",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 6,
+        "missed": 0,
+        "status": "clinched",
+        "needs": 0,
+        "remaining": 4,
+        "id": "jeff-broderick",
+        "captain": false
+      },
+      {
+        "name": "Vince Clemins",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 6,
+        "missed": 0,
+        "status": "clinched",
+        "needs": 0,
+        "remaining": 4,
+        "id": "vince-clemins",
+        "captain": true
+      },
+      {
+        "name": "Tom Davis",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 6,
+        "missed": 0,
+        "status": "clinched",
+        "needs": 0,
+        "remaining": 4,
+        "id": "tom-davis",
+        "captain": false
+      },
+      {
+        "name": "Keith McCarthy",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "missed"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 5,
+        "missed": 1,
+        "status": "needs",
+        "needs": 1,
+        "remaining": 4,
+        "id": "keith-mccarthy",
+        "captain": false
+      },
+      {
+        "name": "Bill Prelle",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "missed"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 5,
+        "missed": 1,
+        "status": "needs",
+        "needs": 1,
+        "remaining": 4,
+        "id": "bill-prelle",
+        "captain": false
+      },
+      {
+        "name": "John Klemick",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "missed"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 5,
+        "missed": 1,
+        "status": "needs",
+        "needs": 1,
+        "remaining": 4,
+        "id": "john-klemick",
+        "captain": false
+      },
+      {
+        "name": "Al Fromenko",
+        "marks": [
+          {
+            "week": 1,
+            "status": "played"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "missed"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "missed"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 4,
+        "missed": 2,
+        "status": "needs",
+        "needs": 2,
+        "remaining": 4,
+        "id": "al-fromenko",
+        "captain": false
+      },
+      {
+        "name": "Frank Gillespie",
+        "marks": [
+          {
+            "week": 1,
+            "status": "missed"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "missed"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 4,
+        "missed": 2,
+        "status": "needs",
+        "needs": 2,
+        "remaining": 4,
+        "id": "frank-gillespie",
+        "captain": false
+      },
+      {
+        "name": "Jim Wright",
+        "marks": [
+          {
+            "week": 1,
+            "status": "missed"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "played"
+          },
+          {
+            "week": 4,
+            "status": "missed"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 4,
+        "missed": 2,
+        "status": "needs",
+        "needs": 2,
+        "remaining": 4,
+        "id": "jim-wright",
+        "captain": false
+      },
+      {
+        "name": "Dave Keppler",
+        "marks": [
+          {
+            "week": 1,
+            "status": "missed"
+          },
+          {
+            "week": 2,
+            "status": "played"
+          },
+          {
+            "week": 3,
+            "status": "missed"
+          },
+          {
+            "week": 4,
+            "status": "played"
+          },
+          {
+            "week": 5,
+            "status": "played"
+          },
+          {
+            "week": 6,
+            "status": "played"
+          },
+          {
+            "week": 7,
+            "status": "upcoming"
+          },
+          {
+            "week": 8,
+            "status": "upcoming"
+          },
+          {
+            "week": 9,
+            "status": "upcoming"
+          },
+          {
+            "week": 10,
+            "status": "upcoming"
+          }
+        ],
+        "played": 4,
+        "missed": 2,
+        "status": "needs",
+        "needs": 2,
+        "remaining": 4,
+        "id": "dave-keppler",
+        "captain": false
+      }
+    ],
+    "summary": {
+      "clinched": 4,
+      "needs": 7,
+      "out": 0
+    }
+  }
 }

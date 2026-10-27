@@ -9,9 +9,12 @@ Weekly update
    - schedule.csv              our match list, including DartConnect recap URLs
    - standings.csv             DartConnect division standings snapshot
    - division_schedule.csv     full division slate (authoritative scores)
-   - clemins-half.xlsx         team workbook; Stats + Attendance sheets
+   - clemins-half.xlsx         team workbook; Stats sheet (player lines)
+   - attendance.json           who shot each week, through the latest recorded week
 2. Optional: drop a new photo at sources/scoresheets/week-07.jpg
    and add a row to SCORESHEET_SOURCES below (rotate if the photo is sideways).
+   On the attendance file, mark that week played or missed for each player
+   and set the week's status to "recorded". Weeks still ahead stay "upcoming".
 3. From the repo root:
 
        python3 scripts/build_data.py
@@ -36,6 +39,10 @@ What the script trusts
   which is how that snapshot ranked the division.
 - Week 6 player lines are not in the workbook. The team score (11–4) is.
   The scoresheet image is published; individual Week 6 numbers are not invented.
+- Attendance and playoff eligibility come from sources/attendance.json.
+  A player is present only when that file marks the week played (he shot
+  on the paper scoresheet). The workbook Attendance sheet is not the
+  source for the site; it is only checked so a disagreement is printed.
 """
 
 from __future__ import annotations
@@ -642,12 +649,153 @@ def scoresheet_meta(matches):
     return sheets
 
 
+def load_attendance_board():
+    """Team attendance from sources/attendance.json.
+
+    Marks on recorded weeks are played or missed. Upcoming weeks are not
+    played yet. A recorded week with no mark, or a week listed in
+    not_recorded_weeks, is not recorded. Playoffs need required_weeks of
+    regular_season_weeks. Clinched once played hits the requirement.
+    Otherwise the player needs that many of the weeks still upcoming, or
+    can't make it when the weeks left are fewer than that.
+    """
+    path = SOURCES / "attendance.json"
+    if not path.exists():
+        print("no sources/attendance.json; player attendance stays on the workbook sheet")
+        return None
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    weeks = []
+    for row in raw["weeks"]:
+        weeks.append(
+            {
+                "week": int(row["week"]),
+                "date": row["date"],
+                "status": row["status"],
+            }
+        )
+    required = int(raw["required_weeks"])
+    season_weeks = int(raw["regular_season_weeks"])
+    unrecorded = {int(week) for week in raw.get("not_recorded_weeks") or []}
+    players_out = []
+    for person in raw["players"]:
+        name = NAME_FIX.get(str(person["name"]).strip(), str(person["name"]).strip())
+        given = {str(key): value for key, value in (person.get("marks") or {}).items()}
+        marks = []
+        played = missed = 0
+        for week in weeks:
+            number = week["week"]
+            key = str(number)
+            if week["status"] == "upcoming":
+                status = "upcoming"
+            elif week["status"] == "not_recorded" or number in unrecorded:
+                status = "unrecorded"
+            elif given.get(key) in ("played", "missed"):
+                status = given[key]
+            else:
+                status = "unrecorded"
+            if status == "played":
+                played += 1
+            elif status == "missed":
+                missed += 1
+            marks.append({"week": number, "status": status})
+        remaining = sum(1 for week in weeks if week["status"] == "upcoming")
+        needs = max(0, required - played)
+        if played >= required:
+            eligibility = "clinched"
+            needs = 0
+        elif needs > remaining:
+            eligibility = "out"
+        else:
+            eligibility = "needs"
+        file_status = person.get("status")
+        if file_status and file_status != eligibility:
+            print(f"attendance status recomputed for {name}: file {file_status} -> {eligibility}")
+        players_out.append(
+            {
+                "name": name,
+                "marks": marks,
+                "played": played,
+                "missed": missed,
+                "status": eligibility,
+                "needs": needs,
+                "remaining": remaining,
+            }
+        )
+    recorded = [week["week"] for week in weeks if week["status"] == "recorded"]
+    summary = {
+        "clinched": sum(1 for person in players_out if person["status"] == "clinched"),
+        "needs": sum(1 for person in players_out if person["status"] == "needs"),
+        "out": sum(1 for person in players_out if person["status"] == "out"),
+    }
+    return {
+        "season": raw.get("season"),
+        "rule": raw["rule"],
+        "required_weeks": required,
+        "regular_season_weeks": season_weeks,
+        "updated": raw.get("updated"),
+        "recorded_through_week": max(recorded) if recorded else None,
+        "weeks_left": sum(1 for week in weeks if week["status"] == "upcoming"),
+        "weeks": weeks,
+        "players": players_out,
+        "summary": summary,
+    }
+
+
+def apply_attendance(players, board, workbook_attendance):
+    if not board:
+        return
+    by_name = {player["name"]: player for player in players}
+    listed = set()
+    for person in board["players"]:
+        name = person["name"]
+        listed.add(name)
+        workbook = workbook_attendance.get(name, {})
+        for mark in person["marks"]:
+            if mark["status"] not in ("played", "missed"):
+                continue
+            week = mark["week"]
+            if week not in workbook:
+                continue
+            shot = mark["status"] == "played"
+            if workbook[week] != shot:
+                print(
+                    f"attendance override {name} week {week}: "
+                    f"workbook {'played' if workbook[week] else 'missed'} -> {mark['status']}"
+                )
+        player = by_name.get(name)
+        if player is None:
+            print(f"attendance player not on the roster: {name}")
+            person["id"] = slug(name)
+            person["captain"] = name == "Vince Clemins"
+            continue
+        person["id"] = player["id"]
+        person["captain"] = bool(player["captain"])
+        player["playoff_weeks_required"] = board["required_weeks"]
+        player["playoff_weeks_scheduled"] = board["regular_season_weeks"]
+        player["playoff_status"] = person["status"]
+        player["playoff_needs"] = person["needs"]
+        player["playoff_remaining"] = person["remaining"]
+        player["attendance"] = [
+            {
+                "week": mark["week"],
+                "played": mark["status"] == "played",
+                "status": mark["status"],
+            }
+            for mark in person["marks"]
+        ]
+    missing = [player["name"] for player in players if player["name"] not in listed]
+    if missing:
+        print("roster players missing from attendance.json: " + ", ".join(missing))
+
+
 def main():
     stats_rows, attendance = load_workbook_stats()
     weekly = load_weekly_detail()
     export = load_roster_export()
     extras = load_schedule_extras()
     players = build_players(stats_rows, weekly, export, attendance)
+    board = load_attendance_board()
+    apply_attendance(players, board, attendance)
     matches = build_matches(extras)
     standings = build_standings()
     compress_scoresheets(matches)
@@ -655,6 +803,25 @@ def main():
     upcoming = [m for m in matches if m["status"] != "completed"]
     us = next(t for t in standings if t["is_us"])
     keyed_weeks = sorted({row["week"] for row in stats_rows})
+    notes = [
+        "Player 3DA, PPD, MPR, checkout rate, and W–L are weighted from the team workbook through Week 5.",
+        "100+, 140+, 180s, high turn, and checkout scores are from the DartConnect weekly export (Weeks 1–4). Week 5–6 visit scores were not in that export.",
+        "First-nine average, division ranks, and 5/7/9-mark rounds are the DartConnect roster export (through Week 4).",
+        "Team results and the division table are scored from the division schedule through Week 6. The DartConnect standings file in sources/ is the Week 4 snapshot.",
+        "Week 6 individual lines are on the scoresheet photo and are not in the workbook, so they are not in the player averages.",
+    ]
+    if board:
+        ahead = board["weeks_left"]
+        notes.append(
+            "Attendance through Week "
+            + str(board["recorded_through_week"])
+            + " counts a player present only when he shot that night on the paper scoresheet. Playoffs need "
+            + str(board["required_weeks"])
+            + " of "
+            + str(board["regular_season_weeks"])
+            + " regular-season weeks."
+            + (f" {ahead} weeks have not been played." if ahead else " The regular season is complete.")
+        )
     payload = {
         "meta": {
             "league": "Quaker City English Dart League",
@@ -671,13 +838,7 @@ def main():
             "results_through_week": max((m["week"] for m in completed), default=None),
             "generated": "2026-10-27",
             "playoff_rule": "A player must play 6 of the 10 scheduled weeks to be playoff eligible.",
-            "notes": [
-                "Player 3DA, PPD, MPR, checkout rate, and W–L are weighted from the team workbook through Week 5.",
-                "100+, 140+, 180s, high turn, and checkout scores are from the DartConnect weekly export (Weeks 1–4). Week 5–6 visit scores were not in that export.",
-                "First-nine average, division ranks, and 5/7/9-mark rounds are the DartConnect roster export (through Week 4).",
-                "Team results and the division table are scored from the division schedule through Week 6. The DartConnect standings file in sources/ is the Week 4 snapshot.",
-                "Week 6 individual lines are on the scoresheet photo and are not in the workbook, so they are not in the player averages.",
-            ],
+            "notes": notes,
         },
         "team": {
             "name": OUR_NAME,
@@ -699,6 +860,7 @@ def main():
         "standings": standings,
         "division_slate": division_slate(),
         "scoresheets": scoresheet_meta(matches),
+        "attendance": board,
     }
     DATA_OUT.parent.mkdir(parents=True, exist_ok=True)
     DATA_OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

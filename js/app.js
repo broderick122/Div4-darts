@@ -350,20 +350,117 @@
   }
 
   function attendanceLine(player) {
-    const shot = player.attendance.filter((a) => a.played).length;
-    return shot + " of " + player.playoff_weeks_scheduled + " weeks shot through week " +
-      state.data.meta.player_lines_through_week + ". Playoffs need " + player.playoff_weeks_required + ".";
+    const shot = player.attendance.filter((a) => a.status === "played" || (a.status == null && a.played)).length;
+    const board = state.data.attendance;
+    const through = board && board.recorded_through_week != null
+      ? board.recorded_through_week
+      : state.data.meta.player_lines_through_week;
+    let tail = "Playoffs need " + player.playoff_weeks_required + ".";
+    if (player.playoff_status === "clinched") tail = "Clinched.";
+    else if (player.playoff_status === "out") tail = "Can't make it.";
+    else if (player.playoff_status === "needs") tail = "Needs " + player.playoff_needs + " of " + player.playoff_remaining + ".";
+    return shot + " of " + player.playoff_weeks_scheduled + " weeks shot through week " + through + ". " + tail;
   }
   function attendBlocks(player) {
     const map = {};
-    player.attendance.forEach((a) => { map[a.week] = a.played; });
+    player.attendance.forEach((a) => {
+      map[a.week] = a.status || (a.played ? "played" : "missed");
+    });
+    const cls = { played: "on", missed: "off", upcoming: "yet", unrecorded: "na" };
+    const label = { played: "Played", missed: "Missed", upcoming: "Not played yet", unrecorded: "Not recorded" };
     let html = "<div class='attend' aria-label='Attendance'>";
-    for (let w = 1; w <= 10; w++) {
-      const known = Object.prototype.hasOwnProperty.call(map, w);
-      const cls = !known ? "" : map[w] ? "on" : "off";
-      html += "<i class='" + cls + "' title='Week " + w + "'>" + w + "</i>";
+    for (let w = 1; w <= player.playoff_weeks_scheduled; w++) {
+      const status = map[w];
+      const name = status ? label[status] || status : "Not recorded";
+      html += "<i class='" + (cls[status] || "") + "' title='Week " + w + " · " + name + "'>" + w + "</i>";
     }
     return html + "</div>";
+  }
+
+  function shortDate(iso) {
+    if (!iso) return "";
+    const [y, m, d] = iso.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  }
+  function playoffLabel(person) {
+    if (person.status === "clinched") return "Clinched";
+    if (person.status === "out") return "Can't make it";
+    return "Needs " + person.needs + " of " + person.remaining;
+  }
+  function playoffTitle(person) {
+    if (person.status === "clinched") return "Clinched. Six weeks are in.";
+    if (person.status === "out") return "Can't make it. Not enough weeks left.";
+    return person.needs + " more week" + (person.needs === 1 ? "" : "s") + " needed out of the " + person.remaining + " left.";
+  }
+  function markGlyph(status) {
+    if (status === "played") return "✓";
+    if (status === "missed") return "✕";
+    if (status === "upcoming") return "–";
+    return "?";
+  }
+  function markName(status) {
+    if (status === "played") return "Played";
+    if (status === "missed") return "Missed";
+    if (status === "upcoming") return "Not played yet";
+    return "Not recorded";
+  }
+  function renderAttendance() {
+    const board = state.data.attendance;
+    const root = $("attend-body");
+    if (!board || !root) return;
+    $("attend-rule").textContent = board.rule;
+    const summary = [
+      [String(board.recorded_through_week), "Recorded through"],
+      [String(board.weeks_left), "Weeks left"],
+      [String(board.summary.clinched), "Clinched"],
+      [String(board.summary.needs), "Still need weeks"],
+      [String(board.summary.out), "Can't make it"],
+    ];
+    const weekHeads = board.weeks.map((w) =>
+      "<th scope='col'><span>W" + w.week + "</span><small>" + shortDate(w.date) + "</small></th>"
+    ).join("");
+    const rows = board.players.map((person) => {
+      const marks = {};
+      person.marks.forEach((m) => { marks[m.week] = m.status; });
+      const cells = board.weeks.map((w) => {
+        const status = marks[w.week] || "unrecorded";
+        return "<td><span class='att-mark " + status + "' title='Week " + w.week + " · " + markName(status) + "' aria-label='Week " + w.week + " " + markName(status) + "'>" + markGlyph(status) + "</span></td>";
+      }).join("");
+      const cap = person.captain ? "<span class='cap'>Captain</span>" : "";
+      return "<tr class='" + (person.captain ? "us" : "") + "'><th scope='row' class='player'><strong>" + escapeHtml(person.name) + "</strong>" + cap + "</th>" +
+        cells +
+        "<td class='shot'>" + person.played + "</td>" +
+        "<td><span class='elig " + person.status + "' title='" + escapeHtml(playoffTitle(person)) + "'>" + escapeHtml(playoffLabel(person)) + "</span></td></tr>";
+    }).join("");
+    const cards = board.players.map((person) => {
+      const marks = {};
+      person.marks.forEach((m) => { marks[m.week] = m.status; });
+      const weeks = board.weeks.map((w) => {
+        const status = marks[w.week] || "unrecorded";
+        return "<div class='att-week " + status + "'><b>" + w.week + "</b><span class='att-mark " + status + "' aria-label='Week " + w.week + " " + markName(status) + "'>" + markGlyph(status) + "</span><small>" + shortDate(w.date) + "</small></div>";
+      }).join("");
+      const cap = person.captain ? "<span class='cap'>Captain</span>" : "";
+      return "<article class='att-card" + (person.captain ? " us" : "") + "'>" +
+        "<header><div><strong>" + escapeHtml(person.name) + "</strong>" + cap +
+        "<div class='ha'>" + person.played + " weeks played</div></div>" +
+        "<span class='elig " + person.status + "' title='" + escapeHtml(playoffTitle(person)) + "'>" + escapeHtml(playoffLabel(person)) + "</span></header>" +
+        "<div class='att-weeks'>" + weeks + "</div></article>";
+    }).join("");
+    const legend = [
+      ["played", "Played"],
+      ["missed", "Missed"],
+      ["upcoming", "Not played yet"],
+      ["unrecorded", "Not recorded"],
+    ].map(([status, label]) =>
+      "<li><span class='att-mark " + status + "' aria-hidden='true'>" + markGlyph(status) + "</span>" + label + "</li>"
+    ).join("");
+    root.innerHTML =
+      "<div class='att-summary'>" + summary.map(([n, l]) => "<article class='tile'><div class='num'>" + n + "</div><span class='lbl'>" + l + "</span></article>").join("") + "</div>" +
+      "<div class='att-table-wrap'><table class='att-table'><thead><tr><th scope='col' class='player'>Player</th>" + weekHeads +
+        "<th scope='col'>Played</th><th scope='col'>Playoffs</th></tr></thead><tbody>" + rows + "</tbody></table></div>" +
+      "<div class='att-cards'>" + cards + "</div>" +
+      "<ul class='att-legend'>" + legend + "</ul>";
   }
 
   function drawChart(player) {
@@ -602,7 +699,7 @@
       if (event.key === "Escape") closeLightbox();
     });
     const links = document.querySelectorAll(".top-nav a, .dock a");
-    const sections = ["board", "player", "compare", "night", "standings"].map((id) => $(id));
+    const sections = ["board", "player", "compare", "night", "standings", "attendance"].map((id) => $(id));
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
@@ -633,6 +730,7 @@
     renderVersus();
     renderNight();
     renderStandings();
+    renderAttendance();
     renderFooter();
     bind();
   }
