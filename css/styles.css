@@ -843,24 +843,6 @@ select.picker {
 .stand-more-inner { overflow: hidden; min-height: 0; }
 .stand-more .stand-wrap { margin-top: 12px; }
 
-.gallery { display: grid; gap: 12px; }
-.shot {
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  overflow: hidden;
-  background: #0b0e13;
-}
-.shot img { width: 100%; height: auto; background: #111; }
-.shot figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  align-items: center;
-  padding: 10px 12px 12px;
-}
-.shot h3 { margin: 0; font-family: var(--display); letter-spacing: 0.04em; font-size: 26px; }
-.shot p { margin: 2px 0 0; color: var(--muted); }
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -891,7 +873,7 @@ footer.colophon ul { padding-left: 18px; }
   bottom: 0;
   z-index: 40;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0;
   background: rgba(7, 8, 11, 0.94);
   border-top: 1px solid var(--line);
@@ -931,7 +913,6 @@ footer.colophon ul { padding-left: 18px; }
   .tiles, .bests { grid-template-columns: repeat(4, 1fr); }
   .cards { display: none; }
   .table-wrap { display: block; }
-  .gallery { grid-template-columns: repeat(3, 1fr); }
   .picker-row { grid-template-columns: 1fr 1fr; }
   main { padding-bottom: 48px; }
   .dock { display: none; }

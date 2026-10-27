@@ -542,18 +542,6 @@
           "</tr></thead><tbody>" + table.map(standRow).join("") + "</tbody></table></div></div></div>";
   }
 
-  function renderSheets() {
-    $("gallery").innerHTML = state.data.scoresheets.map((s) =>
-      "<figure class='shot'>" +
-        "<button type='button' class='sheet-open' data-full='" + s.full + "' data-title='Week " + s.week + " vs " + escapeHtml(s.opponent_captain) + "' style='all:unset;cursor:zoom-in;display:block'>" +
-          "<img src='" + s.web + "' alt='Week " + s.week + " scoresheet, Clemins vs " + escapeHtml(s.opponent_captain) + " on " + s.date + "'>" +
-        "</button>" +
-        "<figcaption><div><h3>WEEK " + s.week + "</h3><p>" + prettyDate(s.date) + " · " + (s.result || "") + " " +
-          (s.clemins_score != null ? s.clemins_score + "–" + s.opponent_score : "") + " vs " + escapeHtml(s.opponent_captain) + "</p></div>" +
-          "<a class='btn' href='" + s.full + "' target='_blank' rel='noopener'>Full size</a></figcaption></figure>"
-    ).join("");
-  }
-
   function renderFooter() {
     const notes = state.data.meta.notes.map((n) => "<li>" + escapeHtml(n) + "</li>").join("");
     $("colophon").innerHTML =
@@ -614,7 +602,7 @@
       if (event.key === "Escape") closeLightbox();
     });
     const links = document.querySelectorAll(".top-nav a, .dock a");
-    const sections = ["board", "player", "compare", "night", "standings", "sheets"].map((id) => $(id));
+    const sections = ["board", "player", "compare", "night", "standings"].map((id) => $(id));
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
@@ -645,7 +633,6 @@
     renderVersus();
     renderNight();
     renderStandings();
-    renderSheets();
     renderFooter();
     bind();
   }
