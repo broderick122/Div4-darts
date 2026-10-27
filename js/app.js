@@ -160,10 +160,28 @@
     }).join("");
   }
 
+  function focusStat(player) {
+    const s = player.season;
+    const shown = {
+      ppr_3da: [fmt(s.ppr_3da, 2), "3DA"],
+      mpr: [fmt(s.mpr, 2), "MPR"],
+      wins: [String(s.wins), "Wins"],
+      ppd: [fmt(s.ppd, 2), "PPD"],
+      checkout_pct: [fmt(s.checkout_pct, 1) + "%", "CO"],
+      tons_100: [dash(s.tons_100), "100+"],
+      win_pct: [fmt(s.win_pct, 1) + "%", "Win"],
+      games: [String(s.games), "GP"],
+      high_turn: [dash(s.high_turn), "High"],
+      name: [fmt(s.ppr_3da, 2), "3DA"],
+    };
+    return shown[state.sortKey] || shown.ppr_3da;
+  }
+
   function rowHtml(player, rank) {
     const s = player.season;
     const cap = player.captain ? "<span class='cap'>CAP</span>" : "";
     const div = s.ppr_rank ? "#" + s.ppr_rank.place : "—";
+    const focus = focusStat(player);
     return {
       card:
         "<article class='player-card" + (player.id === state.playerId ? " is-selected" : "") + "' data-id='" + player.id + "'>" +
@@ -171,7 +189,7 @@
           "<div class='who'><b>" + escapeHtml(player.name) + cap + "</b><small>" +
             s.wins + "–" + s.losses + " · " + s.games + " GP" +
           "</small></div>" +
-          "<div class='big-stat'>" + fmt(s.ppr_3da, 2) + "<span>3DA</span></div>" +
+          "<div class='big-stat'>" + focus[0] + "<span>" + focus[1] + "</span></div>" +
           "<div class='mini-stats'>" +
             "<span>MPR <b>" + fmt(s.mpr, 2) + "</b></span>" +
             "<span>PPD <b>" + fmt(s.ppd, 2) + "</b></span>" +
