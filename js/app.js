@@ -489,12 +489,16 @@
         const recap = m.recap_url
           ? "<a class='btn' href='" + escapeHtml(m.recap_url) + "' target='_blank' rel='noopener'>Recap</a>"
           : "<span class='ha'>No recap link</span>";
+        const sheet = (state.data.scoresheets || []).find((s) => s.week === m.week);
+        const sheetBtn = sheet
+          ? "<button type='button' class='btn sheet-open' data-web='" + sheet.web + "' data-full='" + sheet.full + "' data-title='Week " + m.week + " vs " + escapeHtml(m.opponent_captain) + "'>Score Sheet</button>"
+          : "";
         const ppr = m.team_ppr != null ? "<div class='ha'>Team " + fmt(m.team_ppr, 2) + " PPR · " + fmt(m.team_mpr, 2) + " MPR</div>" : "";
         return "<article class='result'>" +
-          "<div><div class='ha'>Wk " + m.week + " · " + m.home_away + "</div><strong>" + escapeHtml(m.opponent_captain) + "</strong>" +
+          "<div class='result-main'><div class='ha'>Wk " + m.week + " · " + m.home_away + "</div><strong>" + escapeHtml(m.opponent_captain) + "</strong>" +
           "<div class='ha'>" + prettyDate(m.date) + " · " + escapeHtml(m.venue_name) + "</div>" + ppr + "</div>" +
-          "<div>" + recap + "</div>" +
-          "<div class='score " + m.result + "'>" + m.result + " " + m.clemins_score + "–" + m.opponent_score + "</div>" +
+          "<div class='result-actions'>" + recap + sheetBtn + "</div>" +
+          "<div class='result-score score " + m.result + "'>" + m.result + " " + m.clemins_score + "–" + m.opponent_score + "</div>" +
         "</article>";
       }).join("") + "</div>" +
       (slate.length
@@ -505,17 +509,37 @@
         : "");
   }
 
+  function standRow(t) {
+    return "<tr class='" + (t.is_us ? "us" : "") + "'>" +
+      "<td>" + t.rank + "</td>" +
+      "<td class='team'><strong>" + escapeHtml(t.captain) + "</strong><div class='ha'>" + escapeHtml(t.bar) + "</div></td>" +
+      "<td>" + t.wins + "</td><td>" + t.losses + "</td><td>" + t.points + "</td><td>" + t.legs_against + "</td>" +
+      "<td>" + fmt(t.leg_win_pct, 1) + "</td><td>" + t.matches + "</td></tr>";
+  }
+
+  function standChip(t) {
+    return "<article class='stand-chip" + (t.is_us ? " us" : "") + "'>" +
+      "<div class='rk'>" + t.rank + "</div>" +
+      "<div><strong>" + escapeHtml(t.captain) + "</strong><div class='ha'>" + escapeHtml(t.bar) + "</div></div>" +
+      "<div class='wl'>" + t.wins + "–" + t.losses + "</div>" +
+      "<div class='pts'>" + t.points + "<span>Pts</span></div></article>";
+  }
+
   function renderStandings() {
     const meta = state.data.meta;
+    const table = state.data.standings;
+    const preview = table.slice(0, 2);
+    const us = table.find((t) => t.is_us);
+    if (us && !preview.some((t) => t.is_us)) preview.push(us);
     $("stand-blurb").textContent =
-      "Through week " + meta.results_through_week + ". Points are legs won, the same order DartConnect used on the earlier snapshot. Clemins is highlighted.";
-    $("stand-table").querySelector("tbody").innerHTML = state.data.standings.map((t) =>
-      "<tr class='" + (t.is_us ? "us" : "") + "'>" +
-        "<td>" + t.rank + "</td>" +
-        "<td class='team'><strong>" + escapeHtml(t.captain) + "</strong><div class='ha'>" + escapeHtml(t.bar) + "</div></td>" +
-        "<td>" + t.wins + "</td><td>" + t.losses + "</td><td>" + t.points + "</td><td>" + t.legs_against + "</td>" +
-        "<td>" + fmt(t.leg_win_pct, 1) + "</td><td>" + t.matches + "</td></tr>"
-    ).join("");
+      "Through week " + meta.results_through_week + ". Points are legs won. Clemins is highlighted.";
+    $("stand-body").innerHTML =
+      "<div class='stand-compact'>" + preview.map(standChip).join("") + "</div>" +
+      "<button type='button' class='btn stand-toggle' id='stand-toggle' aria-expanded='false' aria-controls='stand-more'><span class='stand-toggle-label'>Show full standings</span><i class='chev' aria-hidden='true'></i></button>" +
+      "<div class='stand-more' id='stand-more' aria-hidden='true'>" +
+        "<div class='stand-more-inner'><div class='stand-wrap'><table class='stand-table' id='stand-table'><thead><tr>" +
+          "<th>Rank</th><th class='team'>Team</th><th>W</th><th>L</th><th>Pts</th><th>Against</th><th>Leg%</th><th>Played</th>" +
+          "</tr></thead><tbody>" + table.map(standRow).join("") + "</tbody></table></div></div></div>";
   }
 
   function renderSheets() {
@@ -543,11 +567,11 @@
       state.data.meta.results_through_week + ".";
   }
 
-  function openLightbox(src, title) {
+  function openLightbox(src, title, fullHref) {
     $("lightbox-img").src = src;
-    $("lightbox-img").alt = title;
-    $("lightbox-title").textContent = title;
-    $("lightbox-full").href = src;
+    $("lightbox-img").alt = title || "Score sheet";
+    $("lightbox-title").textContent = title || "Score sheet";
+    $("lightbox-full").href = fullHref || src;
     $("lightbox").hidden = false;
     $("lightbox-close").focus();
   }
@@ -566,9 +590,18 @@
       const card = event.target.closest(".player-card");
       const row = event.target.closest("#board-table tbody tr");
       const sheet = event.target.closest(".sheet-open");
+      const standToggle = event.target.closest("#stand-toggle");
+      if (standToggle) {
+        const more = $("stand-more");
+        const open = more.classList.toggle("is-open");
+        standToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        more.setAttribute("aria-hidden", open ? "false" : "true");
+        standToggle.querySelector(".stand-toggle-label").textContent = open ? "Hide full standings" : "Show full standings";
+        return;
+      }
       if (card) openPlayer(card.dataset.id, true);
       else if (row) openPlayer(row.dataset.id, true);
-      else if (sheet) openLightbox(sheet.dataset.full, sheet.dataset.title);
+      else if (sheet) openLightbox(sheet.dataset.web || sheet.dataset.full, sheet.dataset.title, sheet.dataset.full);
     });
     $("player-select").addEventListener("change", (event) => openPlayer(event.target.value, false));
     $("compare-a").addEventListener("change", (event) => { state.compareA = event.target.value; renderVersus(); });
