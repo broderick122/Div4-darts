@@ -14,6 +14,7 @@ The page is unlisted (`noindex` plus a `robots.txt` that disallows everything). 
 - Next match (date, time, opponent, venue, map) and the season card with DartConnect recap links where we have them.
 - Division 04 table with Clemins highlighted. Points are legs won.
 - Attendance and playoff eligibility for all ten regular-season weeks. A player is present only if he shot that night. Playoffs need 6 of 10. Open it from Attend in the nav.
+- Next-match scouting on `scout.html`, linked from Scout in the nav and from the next-match card. The current file is the Week 7 Polonia report.
 - Score Sheet buttons on the season card for weeks that have a photo (4, 5, and 6). The images stay in `scoresheets/`.
 
 ## Where the numbers come from

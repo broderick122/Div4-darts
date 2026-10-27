@@ -1275,6 +1275,8 @@ footer.colophon ul { padding-left: 18px; }
     padding-top: 36px;
     gap: 28px;
   }
+  .hero > * { min-width: 0; }
+  .att-table-wrap, .scout-scroll, .table-wrap, .sorts { max-width: 100%; }
   .tiles, .bests { grid-template-columns: repeat(4, 1fr); }
   .att-summary { grid-template-columns: repeat(4, 1fr); }
   .scout-summary { grid-template-columns: repeat(5, 1fr); }
@@ -1294,6 +1296,9 @@ footer.colophon ul { padding-left: 18px; }
   .result-actions { grid-column: 2; grid-row: 1; }
   .result-score { grid-column: 3; grid-row: 1; }
   .stat-row .num { font-size: 52px; }
+}
+@media (min-width: 800px) and (max-width: 1040px) {
+  .hero { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
